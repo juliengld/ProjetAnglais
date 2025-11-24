@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ocean Exploration — Home</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<div class="brand"><div class="logo"></div><span>Ocean Exploration</span></div>
+<nav>
+<a href="./pages/technology.html">Technology</a>
+<a href="./pages/articles.html">Articles</a>
+<a href="./pages/interviews.html">Interviews</a>
+<a href="./pages/games.html">Games</a>
+<a href="./pages/about.html">About Us</a>
+</nav>
+</div>
+</header>
+
+
+<main class="hero" style="position:relative;overflow:hidden">
+<div class="wrap">
+<h1>Speak about the deep — articles, interviews & the robots that make it possible</h1>
+<p class="lead">Access what we publish from the homepage: featured <strong>articles</strong>,
+<strong>video interviews</strong>, and the <strong>drones & robots</strong> used for underwater exploration. Explore the stakes and the tech.</p>
+<div class="grid cols-3">
+<div class="card"><h3>Technology</h3><p class="meta">AUVs, ROVs, crewed subs. Specs and use‑cases.</p><p><a class="btn" href="./pages/technology.html">See robots</a></p></div>
+<div class="card"><h3>Articles</h3><p class="meta">Mission logs, research notes, analysis.</p><p><a class="btn alt" href="./pages/articles.html">Read posts</a></p></div>
+<div class="card"><h3>Interviews</h3><p class="meta">Scientists, pilots, engineers — in video.</p><p><a class="btn green" href="./pages/interviews.html">Watch talks</a></p></div>
+</div>
+<section>
+<h2>Games</h2>
+<p class="sub">Learn by playing: quizzes and small simulations.</p>
+<div class="card"><a class="btn" href="./pages/games.html">Play now</a></div>
+</section>
+</div>
+<!-- Decorative background: waves + submarine -->
+<svg class="ocean-scene" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="waveG" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,.12)"/><stop offset="100%" stop-color="rgba(255,255,255,.02)"/></linearGradient></defs>
+<path fill="url(#waveG)" d="M0,128L60,138.7C120,149,240,171,360,176C480,181,600,171,720,154.7C840,139,960,117,1080,117.3C1200,117,1320,139,1380,149.3L1440,160L1440,220L1380,220C1320,220,1200,220,1080,220C960,220,840,220,720,220C600,220,480,220,360,220C240,220,120,220,60,220L0,220Z"/>
+</svg>
+<svg class="submarine" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exploration submarine">
+<defs><linearGradient id="subG" x1="0" x2="1"><stop offset="0%" stop-color="#5dd0d3"/><stop offset="100%" stop-color="#49a7d9"/></linearGradient></defs>
+<g>
+<ellipse cx="100" cy="55" rx="70" ry="28" fill="url(#subG)"/>
+<circle cx="70" cy="55" r="10" fill="#0b2238"/>
+<circle cx="100" cy="55" r="9" fill="#0b2238"/>
+<circle cx="130" cy="55" r="8" fill="#0b2238"/>
+<rect x="36" y="47" width="16" height="16" rx="5" fill="#5dd0d3"/>
+<rect x="30" y="50" width="7" height="10" rx="2" fill="#3aa3c9"/>
+</g>
+</svg>
+</main>
+
+
+<footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
+<script src="./script.js"></script>
+</body>
+</html>
