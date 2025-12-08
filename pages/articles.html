@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -6,12 +7,13 @@
 <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
+
 <header>
 <div class="wrap nav">
 <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
 <nav>
 <a href="./technology.html">Technology</a>
-<a href="./articles.html">Articles</a>
+<a href="./articles.html" class="active">Articles</a>
 <a href="./interviews.html">Interviews</a>
 <a href="./games.html">Games</a>
 <a href="./about.html">About Us</a>
@@ -19,16 +21,38 @@
 </div>
 </header>
 
-
 <main class="wrap">
 <h1>Articles</h1>
-<p class="sub">Publish research notes, mission logs, and opinion pieces. Replace the cards with your posts.</p>
-<div class="grid cols-2">
-<article class="card"><span class="tag">Feature</span><h3>Mapping the Abyssal Plains</h3><p class="meta">Date • Author</p><p>Excerpt…</p><p><a class="btn" href="#">Read</a></p></article>
-<article class="card"><span class="tag">Report</span><h3>ROV Mission: Hydrothermal Vents</h3><p class="meta">Date • Author</p><p>Summary…</p><p><a class="btn alt" href="#">Open</a></p></article>
+<p class="sub">Publish research notes, mission logs, and historical reviews.</p>
+
+<div class="grid cols-3">
+  
+  <article class="card">
+    <span class="tag">History</span>
+    <h3>History of Underwater Exploration</h3>
+    <p class="meta">Dec 2025 • Comprehensive Review</p>
+    <p>From the wooden "Turtle" (1775) to the titanium "Limiting Factor". A full history of how we dive deep.</p>
+    <p><a class="btn" href="./history-full.html">Read Full History</a></p>
+  </article>
+
+  <article class="card">
+    <span class="tag">Feature</span>
+    <h3>Mapping the Abyssal Plains</h3>
+    <p class="meta">Nov 2025 • Research</p>
+    <p>How modern sonar technology is finally revealing the 80% of the seafloor we haven't seen yet.</p>
+    <p><a class="btn alt" href="#">Read (Coming Soon)</a></p>
+  </article>
+
+  <article class="card">
+    <span class="tag">Report</span>
+    <h3>ROV Mission: Hydrothermal Vents</h3>
+    <p class="meta">Oct 2025 • Expedition Log</p>
+    <p>Analyzing the chemosynthetic life forms found near the "black smoker" vents in the Pacific.</p>
+    <p><a class="btn alt" href="#">Read (Coming Soon)</a></p>
+  </article>
+
 </div>
 </main>
-
 
 <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
 <script src="../script.js"></script>
