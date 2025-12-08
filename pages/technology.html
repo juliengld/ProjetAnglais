@@ -8,8 +8,6 @@
 <style>
   /* Extra styles for the Tech Details section */
   .tech-details { padding: 4rem 0; border-top: 1px solid #eee; }
-  /* Alternate background for visual separation */
-  .bg-light { background-color: #f9fbfd; } 
   
   .tech-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2rem; }
   .tech-specs ul { list-style: none; padding: 0; }
@@ -79,24 +77,20 @@
         <p>Unlike ROVs, AUVs have no cable connecting them to the ship. They must carry their own power and "think" for themselves.</p>
         <h4>Navigation (The "Blind" Problem)</h4>
         <ul class="tech-specs">
-          <li><strong>INS (Inertial Navigation):</strong> Uses gyroscopes to calculate movement from a start point.</li>
-          <li><strong>DVL (Doppler Velocity Log):</strong> Sonar that pings the seafloor to measure speed and correct drift.</li>
+          [cite_start]<li><strong>INS (Inertial Navigation):</strong> Uses gyroscopes to calculate movement from a start point[cite: 5].</li>
+          [cite_start]<li><strong>DVL (Doppler Velocity Log):</strong> Sonar that pings the seafloor to measure speed and correct drift[cite: 5].</li>
           <li><strong>Acoustic Comms:</strong> Sends small data packets (status updates) via sound waves.</li>
         </ul>
       </div>
       <div class="img-col">
-        
-
-[Image of Autonomous Underwater Vehicle diagram]
-
-        <img src="https://placehold.co/600x400/0077cc/ffffff?text=AUV+Diagram" alt="AUV Diagram" class="tech-img" />
-        <span class="caption">Figure 1: AUVs act as "satellites of the ocean," mapping large areas autonomously.</span>
+        <img src="./images/exail-header-auv-for-defense-applications-02_2500x1406.webp" alt="Exail AUV for Defense Applications" class="tech-img" />
+        <span class="caption">Figure 1: An AUV operating autonomously. (Credit: Exail)</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="rov-section" class="tech-details bg-light">
+<section id="rov-section" class="tech-details">
   <div class="wrap">
     <span class="tag">Robotics</span>
     <h2>Remotely Operated Vehicles (ROV)</h2>
@@ -104,9 +98,8 @@
 
     <div class="tech-layout">
       <div class="img-col">
-         
-        <img src="https://placehold.co/600x400/2a9d8f/ffffff?text=ROV+Working+Underwater" alt="ROV with manipulator arms" class="tech-img" />
-        <span class="caption">Figure 2: An ROV using manipulator arms to sample hydrothermal vents.</span>
+         <img src="./images/gamme-de-rov-seabotix-364.jpg" alt="SeaBotix ROV" class="tech-img" />
+        <span class="caption">Figure 2: A SeaBotix ROV, designed for inspection and observation tasks.</span>
       </div>
 
       <div class="text-col">
@@ -118,7 +111,7 @@
         </ul>
 
         <h4>Tooling & Instrumentation</h4>
-        <p>ROVs are equipped with <strong>manipulator arms</strong> (robotic hands) that can be gentle enough to pick up a sea sponge or strong enough to turn a valve. They carry high-definition cameras and sensors to collect samples[cite: 65].</p>
+        [cite_start]<p>ROVs are equipped with <strong>manipulator arms</strong> (robotic hands) that can be gentle enough to pick up a sea sponge or strong enough to turn a valve[cite: 5]. They carry high-definition cameras and sensors to collect samples.</p>
       </div>
     </div>
   </div>
@@ -133,26 +126,35 @@
     <div class="tech-layout">
       <div class="text-col">
         <h3>Engineering for Pressure</h3>
-        <p>At depth, the pressure can exceed 1,000 atmospheres. To survive, submersibles rely on specialized core systems:</p>
+        [cite_start]<p>At depth, the pressure can exceed 1,000 atmospheres[cite: 5]. To survive, submersibles rely on specialized core systems:</p>
         
         <ul class="tech-specs">
-            <li><strong>Pressure Hull:</strong> A perfect sphere is the strongest shape. While early hulls were steel (like the <em>Trieste</em>), modern deep-divers use <strong>Titanium</strong>[cite: 28, 39, 47].</li>
-            <li><strong>Syntactic Foam:</strong> Standard air tanks would be crushed. Buoyancy is provided by a specialized foam made of billions of glass microspheres[cite: 40].</li>
-            <li><strong>Life Support:</strong> Systems that recycle air, add oxygen, and scrub CO₂ to keep the crew alive for hours[cite: 63].</li>
+            <li><strong>Pressure Hull:</strong> A perfect sphere is the strongest shape. [cite_start]While early hulls were steel (like the <em>Trieste</em>), modern deep-divers use <strong>Titanium</strong>[cite: 5].</li>
+            <li><strong>Syntactic Foam:</strong> Standard air tanks would be crushed. [cite_start]Buoyancy is provided by a specialized foam made of billions of glass microspheres[cite: 5].</li>
+            [cite_start]<li><strong>Life Support:</strong> Systems that recycle air, add oxygen, and scrub CO₂ to keep the crew alive for hours[cite: 5].</li>
         </ul>
 
         <h4>Famous Vehicles</h4>
-        <p><strong>DSV Alvin:</strong> Famous for discovering the Titanic and hydrothermal vents[cite: 37].<br>
-        <strong>Limiting Factor:</strong> The first vehicle capable of repeated dives to the deepest point in every ocean[cite: 51].</p>
+        <p><strong>DSV Alvin:</strong> Famous for discovering the Titanic and hydrothermal vents.<br>
+        <strong>Limiting Factor:</strong> The first vehicle capable of repeated dives to the deepest point in every ocean.</p>
       </div>
 
       <div class="img-col">
-        
-        <img src="https://placehold.co/600x400/e76f51/ffffff?text=Titanium+Pressure+Sphere" alt="Submersible Pressure Sphere" class="tech-img" />
-        <span class="caption">Figure 3: Inside the titanium sphere, pilots and scientists are protected from crushing pressure.</span>
+        <img src="./images/Antipodes_Submersible.webp" alt="Antipodes Submersible" class="tech-img" />
+        <span class="caption">Figure 3: The Antipodes submersible. (Source: OceanGate/Stock)</span>
       </div>
     </div>
   </div>
+</section>
+
+<section class="wrap" style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #ccc;">
+  <h3>Sources & Credits</h3>
+  <ul>
+    [cite_start]<li>Technical specifications and history adapted from: <em>History of Underwater Exploration Technology</em>[cite: 1, 5].</li>
+    <li>AUV Imaging: Exail Technologies.</li>
+    <li>ROV Imaging: SeaBotix / Teledyne Marine.</li>
+    <li>Submersible Imaging: Antipodes Submersible.</li>
+  </ul>
 </section>
 
 <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
