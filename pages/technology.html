@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Technology — Ocean Exploration</title>
 <link rel="stylesheet" href="../styles.css" />
+<style>
+  /* Extra styles for the Tech Details section */
+  .tech-details { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; }
+  .tech-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; margin-top: 2rem; }
+  .tech-specs ul { list-style: none; padding: 0; }
+  .tech-specs li { margin-bottom: 0.8rem; padding-left: 1.2rem; border-left: 3px solid #0077cc; }
+  .tech-img { width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .caption { display: block; text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic; }
+  
+  @media (max-width: 768px) { .tech-layout { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
+
 <header>
 <div class="wrap nav">
 <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
 <nav>
-<a href="./technology.html">Technology</a>
+<a href="./technology.html" class="active">Technology</a>
 <a href="./articles.html">Articles</a>
 <a href="./interviews.html">Interviews</a>
 <a href="./games.html">Games</a>
@@ -19,17 +32,73 @@
 </div>
 </header>
 
-
 <main class="wrap">
-<h1>Technology</h1>
-<p class="sub">Drones & robots enabling exploration — add your specs, images, and links.</p>
-<div class="grid cols-3">
-<article class="card"><span class="tag">AUV</span><h3>Autonomous Underwater Vehicle</h3><p class="meta">Long‑range mapping, INS + DVL + acoustic comms.</p></article>
-<article class="card"><span class="tag">ROV</span><h3>Remotely Operated Vehicle</h3><p class="meta">Tethered, manipulators, high‑precision tasks.</p></article>
-<article class="card"><span class="tag">Crewed</span><h3>Submersible</h3><p class="meta">Human observation & sampling at depth.</p></article>
-</div>
-</main>
+  <h1>Technology</h1>
+  <p class="sub">Drones & robots enabling exploration. Click a card to see details.</p>
+  
+  <div class="grid cols-3">
+    <article class="card">
+      <span class="tag">AUV</span>
+      <h3>Autonomous Vehicle</h3>
+      <p class="meta">Untethered, Long-range</p>
+      <p>Mapping vast areas using INS + DVL navigation and acoustic comms.</p>
+      <p><a class="btn" href="#auv-section">View Specs</a></p>
+    </article>
 
+    <article class="card">
+      <span class="tag">ROV</span>
+      <h3>Remotely Operated</h3>
+      <p class="meta">Tethered, High-Power</p>
+      <p>Real-time video and manipulator arms for high-precision tasks.</p>
+      <p><a class="btn alt" href="#">View Specs</a></p>
+    </article>
+
+    <article class="card">
+      <span class="tag">Crewed</span>
+      <h3>Submersible</h3>
+      <p class="meta">Human Presence</p>
+      <p>Direct observation from titanium spheres at extreme depths.</p>
+      <p><a class="btn alt" href="#">View Specs</a></p>
+    </article>
+  </div>
+
+  <section id="auv-section" class="tech-details">
+    <span class="tag">Deep Dive</span>
+    <h2>Autonomous Underwater Vehicles (AUV)</h2>
+    <p class="lead">AUVs are untethered robots that follow pre-programmed flight paths to map the seafloor, measure water properties, or hunt for mines without human intervention.</p>
+
+    <div class="tech-layout">
+      
+      <div class="text-col">
+        <h3>How it Works</h3>
+        <p>Unlike ROVs, AUVs have no cable connecting them to the ship. They must carry their own power and "think" for themselves using onboard computers.</p>
+        
+        <h4>Navigation (The "Blind" Problem)</h4>
+        <p>GPS does not work underwater. To know where they are, AUVs use a technique called <strong>Dead Reckoning</strong>:</p>
+        <ul class="tech-specs">
+          <li><strong>INS (Inertial Navigation System):</strong> Uses gyroscopes and accelerometers to calculate movement from a starting point.</li>
+          <li><strong>DVL (Doppler Velocity Log):</strong> Sonar that pings the seafloor to measure exact speed and correct the INS drift.</li>
+          <li><strong>USBL (Ultra-Short Baseline):</strong> Acoustic "pings" from the mothership to fix the AUV's position occasionally.</li>
+        </ul>
+
+        <h4>Communication</h4>
+        <p>Radio waves cannot penetrate water. AUVs communicate via <strong>Acoustic Modems</strong> (sound waves), sending small packets of data like "Mission OK" or "Battery Low" back to the surface.</p>
+      </div>
+
+      <div class="img-col">
+        <img src="https://placehold.co/600x400/0077cc/ffffff?text=AUV+Internal+Components+Diagram" alt="Diagram showing AUV sensors and thrusters" class="tech-img" />
+        <span class="caption">Figure 1: Internal components including pressure hull, batteries, and DVL.</span>
+        
+        <br><br>
+
+        <img src="https://placehold.co/600x350/0b2238/ffffff?text=AUV+Scanning+Seafloor" alt="AUV scanning the seabed" class="tech-img" />
+        <span class="caption">Figure 2: An AUV performing a side-scan sonar survey.</span>
+      </div>
+    
+    </div>
+  </section>
+
+</main>
 
 <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
 <script src="../script.js"></script>
