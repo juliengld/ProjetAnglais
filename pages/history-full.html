@@ -16,6 +16,16 @@
     .toc a { text-decoration: none; color: #0077cc; }
     .toc a:hover { text-decoration: underline; }
     .figure { background: #fafafa; padding: 1rem; border: 1px solid #ddd; margin: 1rem 0; text-align: center; font-style: italic; font-size: 0.9rem; border-radius: 4px; }
+
+    /* Simple war/innovation timeline */
+    .timeline { position: relative; margin: 1.5rem 0 0; padding-left: 1.5rem; }
+    .timeline::before { content: ""; position: absolute; left: 0.45rem; top: 0; bottom: 0; width: 2px; background: #e6e6e6; }
+    .t-item { position: relative; padding: 0.75rem 0 0.75rem 1rem; }
+    .t-item::before { content: ""; position: absolute; left: -0.05rem; top: 1.25rem; width: 10px; height: 10px; border-radius: 50%; background: #0b2238; }
+    .t-date { font-weight: 700; color: #0b2238; }
+    .t-title { margin: 0.15rem 0 0.35rem; font-weight: 600; }
+    .t-points { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+    .t-points li { margin: 0.15rem 0; }
   </style>
 </head>
 <body>
@@ -45,12 +55,13 @@
         <h3>Contents</h3>
         <ul>
           <li><a href="#intro">1. Introduction</a></li>
-          <li><a href="#early">2. Early Submersibles: 17th-19th Century</a></li>
-          <li><a href="#bathy">3. The Bathyscaphe Era: 20th Century</a></li>
-          <li><a href="#modern">4. Modern Research Submersibles</a></li>
-          <li><a href="#systems">5. Key Technical Systems</a></li>
-          <li><a href="#advances">6. Recent Advances</a></li>
-          <li><a href="#conclusion">7. Conclusion</a></li>
+          <li><a href="#war-timeline">2. Wars & Rapid Technological Acceleration (Timeline)</a></li>
+          <li><a href="#early">3. Early Submersibles: 17th-19th Century</a></li>
+          <li><a href="#bathy">4. The Bathyscaphe Era: 20th Century</a></li>
+          <li><a href="#modern">5. Modern Research Submersibles</a></li>
+          <li><a href="#systems">6. Key Technical Systems</a></li>
+          <li><a href="#advances">7. Recent Advances</a></li>
+          <li><a href="#conclusion">8. Conclusion</a></li>
         </ul>
       </div>
 
@@ -63,10 +74,69 @@
         </ul>
       </section>
 
+      <section id="war-timeline">
+        <h2>2. Wars & Rapid Technological Acceleration</h2>
+        <p>
+          Beyond scientific curiosity, major conflicts have repeatedly acted as <strong>technology accelerators</strong>.
+          Urgent military needs pushed rapid advances in underwater navigation, sensing, materials, propulsion, and autonomy—
+          technologies later reused for research submersibles and ocean science.
+        </p>
+
+        <div class="timeline" aria-label="Timeline of conflicts accelerating underwater technology">
+          <div class="t-item">
+            <div class="t-date">1775–1776</div>
+            <div class="t-title">American Revolutionary War — Bushnell’s Turtle</div>
+            <ul class="t-points">
+              <li>Early combat submarine concept: sealed hull + ballast control</li>
+              <li>Manual propulsion and basic life-support constraints</li>
+              <li>Introduced core submarine engineering principles</li>
+            </ul>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">1914–1918</div>
+            <div class="t-title">World War I — Submarine warfare scales up</div>
+            <ul class="t-points">
+              <li>Industrialization of submarine platforms and tactics</li>
+              <li>Early listening systems and anti-submarine countermeasures</li>
+            </ul>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">1939–1945</div>
+            <div class="t-title">World War II — Sensors, propulsion, and underwater detection</div>
+            <ul class="t-points">
+              <li>Major advances in sonar (active/passive) and signal processing</li>
+              <li>Better batteries, hull design, and depth performance</li>
+              <li>Underwater communications and navigation techniques mature</li>
+            </ul>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">1950s–1990s</div>
+            <div class="t-title">Cold War — Deep ocean becomes a strategic domain</div>
+            <ul class="t-points">
+              <li>Pressure-resistance, materials, and safety engineering improve fast</li>
+              <li>Navigation (incl. inertial systems), mapping, and undersea cables expand</li>
+              <li>Systems engineering drives reliability → later benefits scientific dives</li>
+            </ul>
+          </div>
+
+          <div class="t-item">
+            <div class="t-date">2000s–today</div>
+            <div class="t-title">From defense R&amp;D to science — Robotics and autonomy</div>
+            <ul class="t-points">
+              <li>AUV/ROV autonomy, better sensors, and AI-assisted mapping</li>
+              <li>Technology transfer accelerates modern ocean research capabilities</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section id="early">
-        <h2>2. Early Submersibles: 17th-19th Century Pioneers</h2>
+        <h2>3. Early Submersibles: 17th-19th Century Pioneers</h2>
         
-        <h3>2.1 The Turtle (1775)</h3>
+        <h3>3.1 The Turtle (1775)</h3>
         
 
 [Image of Bushnell Turtle submarine diagram]
@@ -85,9 +155,9 @@
       </section>
 
       <section id="bathy">
-        <h2>3. The Bathyscaphe Era: 20th Century Advances</h2>
+        <h2>4. The Bathyscaphe Era: 20th Century Advances</h2>
         
-        <h3>3.1 Bathyscaphe Trieste (1953-1960)</h3>
+        <h3>4.1 Bathyscaphe Trieste (1953-1960)</h3>
         
 
 [Image of Bathyscaphe Trieste]
@@ -106,9 +176,9 @@
       </section>
 
       <section id="modern">
-        <h2>4. Modern Research Submersibles</h2>
+        <h2>5. Modern Research Submersibles</h2>
 
-        <h3>4.1 DSV Alvin (1964-present)</h3>
+        <h3>5.1 DSV Alvin (1964-present)</h3>
         
         [cite_start]<div class="figure">Figure 3: DSV Alvin, Woods Hole Oceanographic Institution[cite: 36].</div>
         [cite_start]<p>Operated by the WHOI, Alvin has conducted thousands of dives since 1964, including the discovery of hydrothermal vents and the Titanic[cite: 37].</p>
@@ -119,38 +189,38 @@
             [cite_start]<li><strong>Systems:</strong> Robotic arms, sensors, cameras, and lighting[cite: 43].</li>
         </ul>
 
-        <h3>4.2 Shinkai 6500 (1990)</h3>
+        <h3>5.2 Shinkai 6500 (1990)</h3>
         
         [cite_start]<div class="figure">Figure 4: JAMSTEC's Shinkai 6500 submersible[cite: 46].</div>
         [cite_start]<p>The Japanese Shinkai 6500 descends to 6,500 m using a titanium hull for three occupants and powerful thrusters for precise movement[cite: 47]. [cite_start]It continues to support geological and biological research worldwide[cite: 48].</p>
 
-        <h3>4.3 DSV Limiting Factor (2018)</h3>
+        <h3>5.3 DSV Limiting Factor (2018)</h3>
         
         [cite_start]<div class="figure">Figure 5: Limiting Factor, first reusable full-ocean-depth submersible[cite: 50].</div>
         [cite_start]<p>Built for the Five Deeps Expedition, Limiting Factor can repeatedly dive to 11,000 m[cite: 51]. [cite_start]It features a titanium pressure sphere, autonomous navigation, and life-support for two crew[cite: 52].</p>
       </section>
 
       <section id="systems">
-        <h2>5. Key Technical Systems</h2>
+        <h2>6. Key Technical Systems</h2>
         
-        <h3>5.1 Pressure Hulls</h3>
+        <h3>6.1 Pressure Hulls</h3>
         [cite_start]<p>Early wooden designs evolved into steel and titanium spheres capable of withstanding extreme pressures[cite: 56]. Spherical hulls evenly distribute stress. [cite_start]Modern designs use syntactic foam and composite modules for lighter, high-strength builds[cite: 57].</p>
 
-        <h3>5.2 Buoyancy and Ballast</h3>
+        <h3>6.2 Buoyancy and Ballast</h3>
         [cite_start]<p>Manual ballast pumps in early subs were replaced by gasoline tanks (Trieste) and syntactic foam modules (modern designs), allowing fine depth control and automatic stabilization[cite: 59].</p>
 
-        <h3>5.3 Propulsion and Maneuvering</h3>
+        <h3>6.3 Propulsion and Maneuvering</h3>
         [cite_start]<p>Hand-cranked propellers became electric thrusters, allowing agile horizontal and vertical movement with joystick control[cite: 61].</p>
 
-        <h3>5.4 Life Support</h3>
+        <h3>6.4 Life Support</h3>
         [cite_start]<p>Submersibles now maintain internal pressure, recycle air, remove CO₂, and control temperature and humidity, enabling missions lasting several hours[cite: 63].</p>
 
-        <h3>5.5 Instrumentation</h3>
+        <h3>6.5 Instrumentation</h3>
         [cite_start]<p>Modern submersibles carry high-resolution cameras, sonar systems, robotic arms, and sensors to collect samples and map the seafloor[cite: 65].</p>
       </section>
 
       <section id="advances">
-        <h2>6. Recent Advances</h2>
+        <h2>7. Recent Advances</h2>
         [cite_start]<p>Submersible technology now includes[cite: 67]:</p>
         <ul>
             [cite_start]<li>Full-ocean-depth capable crewed vehicles (Limiting Factor)[cite: 68].</li>
@@ -161,7 +231,7 @@
       </section>
 
       <section id="conclusion">
-        <h2>7. Conclusion</h2>
+        <h2>8. Conclusion</h2>
         [cite_start]<p>From the hand-cranked Turtle to titanium deep-diving submersibles, underwater exploration technology reflects centuries of human ingenuity[cite: 74]. [cite_start]Through advances in pressure hulls, buoyancy, propulsion, and life support, we have transformed the ocean from a mysterious abyss into a domain of scientific discovery[cite: 75].</p>
       </section>
 
