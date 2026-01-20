@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -19,28 +20,127 @@
 </div>
 </header>
 
-
 <main class="hero" style="position:relative;overflow:hidden">
 <div class="wrap">
 <h1>Speak about the deep — articles, interviews & the robots that make it possible</h1>
 <p class="lead">Access what we publish from the homepage: featured <strong>articles</strong>,
 <strong>video interviews</strong>, and the <strong>drones & robots</strong> used for underwater exploration. Explore the stakes and the tech.</p>
+
 <div class="grid cols-3">
-<div class="card"><h3>Technology</h3><p class="meta">AUVs, ROVs, crewed subs. Specs and use‑cases.</p><p><a class="btn" href="./pages/technology.html">See robots</a></p></div>
-<div class="card"><h3>Articles</h3><p class="meta">Mission logs, research notes, analysis.</p><p><a class="btn alt" href="./pages/articles.html">Read posts</a></p></div>
-<div class="card"><h3>Interviews</h3><p class="meta">Scientists, pilots, engineers — in video.</p><p><a class="btn green" href="./pages/interviews.html">Watch talks</a></p></div>
+  <div class="card">
+    <h3>Technology</h3>
+    <p class="meta">AUVs, ROVs, crewed subs. Specs and use-cases.</p>
+    <p><a class="btn" href="./pages/technology.html">See robots</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Articles</h3>
+    <p class="meta">Mission logs, research notes, analysis.</p>
+    <p><a class="btn alt" href="./pages/articles.html">Read posts</a></p>
+  </div>
+
+  <div class="card">
+    <h3>Interviews</h3>
+    <p class="meta">Scientists, pilots, engineers — in video.</p>
+    <p><a class="btn green" href="./pages/interviews.html">Watch talks</a></p>
+  </div>
 </div>
+
+<!-- ✅ ADDED: Key Initiatives -->
+<section>
+  <h2>Key Initiatives</h2>
+  <p class="sub">
+    Two major international programmes turning ocean science into real-world impact — from mapping the seafloor to coordinating global action.
+  </p>
+
+  <div class="initiative">
+    <div class="initiative__preview">
+      <!-- NOTE: Some websites block embedding (X-Frame-Options / CSP). If blank, use the button below. -->
+      <iframe class="initiative__frame" src="https://seabed2030.org/" title="Seabed 2030 preview" loading="lazy"></iframe>
+
+      <div class="initiative__overlay">
+        <span class="tag">Global Mapping</span>
+        <h3>Seabed 2030</h3>
+        <p>
+          Seabed 2030 is a global collaboration that aims to compile and make publicly available a complete map of the ocean floor by 2030.
+          Reliable bathymetry is essential for safer navigation, tsunami and storm-surge modelling, climate studies, habitat mapping,
+          and better protection of marine areas.
+        </p>
+        <p>
+          Underwater robotics is a key enabler: AUVs and ROVs collect high-resolution seafloor data in deep and hard-to-reach zones,
+          improving coverage while reducing time and cost compared to traditional surveys.
+        </p>
+        <p><a class="btn" href="https://seabed2030.org/" target="_blank" rel="noopener noreferrer">Visit Seabed 2030</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="initiative">
+    <div class="initiative__preview">
+      <iframe class="initiative__frame" src="https://oceandecade.org/" title="UN Ocean Decade preview" loading="lazy"></iframe>
+
+      <div class="initiative__overlay">
+        <span class="tag">UN Programme</span>
+        <h3>UN Ocean Decade</h3>
+        <p>
+          The UN Ocean Decade (2021–2030) mobilises scientists, governments, NGOs and industry to deliver “the science we need for the ocean we want”.
+          It connects research to concrete solutions: climate resilience, healthy ecosystems, sustainable food, pollution reduction,
+          and inclusive ocean governance.
+        </p>
+        <p>
+          Autonomous systems are central to this effort: long-endurance drones and underwater robots expand observation networks,
+          improve data collection at scale, and support missions in extreme environments.
+        </p>
+        <p><a class="btn alt" href="https://oceandecade.org/" target="_blank" rel="noopener noreferrer">Visit Ocean Decade</a></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    If a preview appears blank, it is usually because the external website blocks embedding for security reasons.
+    The buttons above will always open the official websites in a new tab.
+  </p>
+</section>
+
+<!-- ✅ ADDED: About Us -->
+<section>
+  <h2>About Us</h2>
+  <p class="lead">
+    We are engineering students at <strong>SeaTech Toulon</strong>, the engineering school of the <strong>University of Toulon</strong>.
+    This website was developed as part of an English project focusing on ocean exploration, with a particular emphasis on underwater robots and autonomous systems.
+  </p>
+  <p>
+    Through articles, interviews and technical content, we aim to explain how modern technologies such as AUVs, ROVs and crewed submersibles
+    contribute to scientific discovery and help us better understand the deep ocean.
+  </p>
+  <p>
+    Project team: <strong>Julien Gaillard</strong>, <strong>Thibaut Dani</strong>, <strong>Georges Nutall</strong> and <strong>Walid Merhazi</strong>.
+  </p>
+
+  <div class="logos">
+    <figure class="logo-card" aria-label="University of Toulon">
+      <img src="./Univ.png" alt="University of Toulon logo" class="logo-img univ" />
+    </figure>
+    <figure class="logo-card" aria-label="SeaTech Toulon">
+      <img src="./seatech.png" alt="SeaTech Toulon logo" class="logo-img seatech" />
+    </figure>
+  </div>
+</section>
+
 <section>
 <h2>Games</h2>
 <p class="sub">Learn by playing: quizzes and small simulations.</p>
 <div class="card"><a class="btn" href="./pages/games.html">Play now</a></div>
 </section>
+
 </div>
+
 <!-- Decorative background: waves + submarine -->
 <svg class="ocean-scene" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
 <defs><linearGradient id="waveG" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,.12)"/><stop offset="100%" stop-color="rgba(255,255,255,.02)"/></linearGradient></defs>
 <path fill="url(#waveG)" d="M0,128L60,138.7C120,149,240,171,360,176C480,181,600,171,720,154.7C840,139,960,117,1080,117.3C1200,117,1320,139,1380,149.3L1440,160L1440,220L1380,220C1320,220,1200,220,1080,220C960,220,840,220,720,220C600,220,480,220,360,220C240,220,120,220,60,220L0,220Z"/>
 </svg>
+
 <svg class="submarine" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Exploration submarine">
 <defs><linearGradient id="subG" x1="0" x2="1"><stop offset="0%" stop-color="#5dd0d3"/><stop offset="100%" stop-color="#49a7d9"/></linearGradient></defs>
 <g>
@@ -53,7 +153,6 @@
 </g>
 </svg>
 </main>
-
 
 <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
 <script src="./script.js"></script>
