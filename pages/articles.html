@@ -6,55 +6,103 @@
   <title>History — Ocean Exploration</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    /* Timeline (visible on Articles/History page) */
-    .timeline-wrap { margin-top: 1.5rem; }
-    .timeline-intro { max-width: 900px; }
+    /* ===== CONTENTS (TOC) ===== */
+    .toc {
+      background: #f2f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1.5rem 0 2.5rem;
+      border: 1px solid #e1e7ef;
+      max-width: 900px;
+    }
+    .toc h3 {
+      margin-top: 0;
+      color: #0b2238;
+      font-weight: 700;
+    }
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+    .toc a {
+      text-decoration: none;
+      color: #1a5fb4;
+    }
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== TIMELINE ===== */
     .timeline {
       position: relative;
-      margin: 1.25rem 0 0;
-      padding-left: 1.5rem;
+      margin: 1.5rem 0 3rem;
+      padding-left: 1.75rem;
+      max-width: 900px;
     }
     .timeline::before {
       content: "";
       position: absolute;
-      left: 0.45rem;
+      left: 0.55rem;
       top: 0;
       bottom: 0;
       width: 2px;
-      background: #e6e6e6;
+      background: #d8dee8;
     }
     .t-item {
       position: relative;
-      padding: 0.8rem 0 0.8rem 1rem;
+      padding: 0.9rem 0 0.9rem 1.4rem;
     }
     .t-item::before {
       content: "";
       position: absolute;
       left: -0.05rem;
-      top: 1.25rem;
-      width: 10px;
-      height: 10px;
+      top: 1.4rem;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: #0b2238;
     }
-    .t-date { font-weight: 800; color: #0b2238; }
-    .t-title { margin: 0.15rem 0 0.35rem; font-weight: 700; }
-    .t-sub { margin: 0 0 0.35rem; color: #4a5568; font-size: 0.95rem; }
-    .t-points { margin: 0.25rem 0 0; padding-left: 1.1rem; }
-    .t-points li { margin: 0.15rem 0; }
 
-    .note {
-      background:#f4f7fb;
-      border:1px solid #d9e2ef;
-      padding:1rem;
-      border-radius:8px;
-      margin:1rem 0;
-      max-width: 900px;
+    /* DATE BADGE — VISIBILITY FIX */
+    .t-date {
+      display: inline-block;
+      font-weight: 900;
+      color: #ffffff;
+      background: #0b2238;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
     }
-    .note strong { color:#0b2238; }
 
-    /* Small divider between sections */
-    .divider { height: 1px; background: #eee; margin: 2.25rem 0; }
+    .t-title {
+      margin: 0.2rem 0 0.35rem;
+      font-weight: 700;
+      color: #0b2238;
+    }
+    .t-sub {
+      margin: 0 0 0.4rem;
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+    .t-points {
+      margin: 0.25rem 0 0;
+      padding-left: 1.2rem;
+    }
+    .t-points li {
+      margin: 0.15rem 0;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e6e6e6;
+      margin: 3rem 0;
+    }
   </style>
 </head>
 <body>
@@ -78,222 +126,95 @@
     Key moments, innovations, and historical drivers behind underwater exploration.
   </p>
 
-  <!-- TIMELINE VISIBLE HERE -->
-  <section class="timeline-wrap" id="timeline">
+  <!-- CONTENTS -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#timeline">Timeline: Wars & Technological Acceleration</a></li>
+      <li><a href="#articles">Long-form Articles</a></li>
+    </ul>
+  </div>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
     <h2>Timeline: Wars & Rapid Technological Acceleration</h2>
 
-    <p class="timeline-intro">
-      Conflicts have repeatedly acted as <strong>technology accelerators</strong>. Urgent military needs
-      pushed advances in underwater navigation, detection, propulsion, materials, and autonomy—
-      later reused in scientific exploration and ocean engineering.
-    </p>
-
-    <div class="note">
-      <strong>How to read this timeline:</strong> each date links a major conflict or strategic period to
-      concrete underwater-tech progress (submarines, sonar, mapping, robotics).
-    </div>
-
-    <div class="timeline" aria-label="Timeline of conflicts accelerating underwater technology">
+    <div class="timeline">
 
       <div class="t-item">
         <div class="t-date">350 BC</div>
-        <div class="t-title">Ancient diving practices (Mediterranean)</div>
-        <p class="t-sub">Not a war milestone, but the earliest “human-tech” baseline: breath-hold diving.</p>
-        <ul class="t-points">
-          <li>Early diving techniques used for harvesting and salvage</li>
-        </ul>
+        <div class="t-title">Ancient sponge divers</div>
+        <p class="t-sub">Early breath-hold diving in the Mediterranean.</p>
       </div>
 
       <div class="t-item">
-        <div class="t-date">4th century BC</div>
-        <div class="t-title">Diving bell concept described (Aristotle)</div>
-        <p class="t-sub">Foundational idea for underwater air trapping and longer submerged work.</p>
-        <ul class="t-points">
-          <li>Early path toward controlled underwater operations</li>
-        </ul>
+        <div class="t-date">4th c. BC</div>
+        <div class="t-title">Diving bell described by Aristotle</div>
+        <p class="t-sub">First concept of trapped air underwater.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1620</div>
-        <div class="t-title">Early “submersible” concepts emerge</div>
-        <p class="t-sub">Engineering imagination begins: sealed hull + buoyancy control ideas.</p>
-        <ul class="t-points">
-          <li>Pre-industrial experiments that inspired later military prototypes</li>
-        </ul>
+        <div class="t-title">Early sealed-hull submersible ideas</div>
+        <p class="t-sub">Foundations of buoyancy and enclosure.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1775–1776</div>
         <div class="t-title">American Revolutionary War — Bushnell’s Turtle</div>
-        <p class="t-sub">First combat submarine attempt: wartime urgency forces innovation.</p>
+        <p class="t-sub">First combat submarine attempt.</p>
         <ul class="t-points">
-          <li>Sealed hull + ballast control principles</li>
-          <li>Manual propulsion + early life-support constraints</li>
-          <li>Introduces core submarine engineering concepts</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1800</div>
-        <div class="t-title">Napoleonic era — Fulton’s Nautilus (experiments)</div>
-        <p class="t-sub">Naval competition pushes stealth and endurance improvements.</p>
-        <ul class="t-points">
-          <li>Longer submerged operation attempts</li>
-          <li>Early underwater explosive concepts</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1853–1856</div>
-        <div class="t-title">Crimean War — industrial naval pressure grows</div>
-        <p class="t-sub">Navies modernize rapidly, setting the stage for later undersea systems.</p>
-        <ul class="t-points">
-          <li>Industrialization of shipbuilding and naval logistics</li>
+          <li>Ballast control</li>
+          <li>Manual propulsion</li>
         </ul>
       </div>
 
       <div class="t-item">
         <div class="t-date">1861–1865</div>
-        <div class="t-title">American Civil War — submersibles and mine warfare</div>
-        <p class="t-sub">Blockades and naval sabotage encourage risky engineering.</p>
-        <ul class="t-points">
-          <li>Operational lessons on buoyancy, safety, and reliability</li>
-          <li>Underwater threats increase focus on detection/countermeasures</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1872–1876</div>
-        <div class="t-title">Challenger Expedition (science milestone)</div>
-        <p class="t-sub">Not war-driven, but a major scientific leap enabled by better ships/instruments.</p>
-        <ul class="t-points">
-          <li>Modern oceanography foundations: sampling, mapping, deep observations</li>
-        </ul>
+        <div class="t-title">American Civil War</div>
+        <p class="t-sub">Submersibles and naval mine warfare.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1914–1918</div>
-        <div class="t-title">World War I — submarine warfare scales up</div>
-        <p class="t-sub">Submarines become strategic assets; detection and countermeasures evolve.</p>
-        <ul class="t-points">
-          <li>Industrial-scale submarine platforms and tactics</li>
-          <li>Hydrophones & early anti-submarine methods</li>
-          <li>Start of the sonar era</li>
-        </ul>
+        <div class="t-title">World War I</div>
+        <p class="t-sub">Industrial submarine warfare and early detection systems.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1939–1945</div>
-        <div class="t-title">World War II — sonar, electronics, and undersea detection</div>
-        <p class="t-sub">Massive R&D investment accelerates sensing and system integration.</p>
-        <ul class="t-points">
-          <li>Active/passive sonar + better signal processing</li>
-          <li>Improved batteries, hull design, depth performance</li>
-          <li>Navigation and underwater communications mature</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1947–1955</div>
-        <div class="t-title">Early Cold War — mapping and strategic ocean operations</div>
-        <p class="t-sub">The deep sea becomes strategic: investment in undersea knowledge increases.</p>
-        <ul class="t-points">
-          <li>Better bathymetry + expanded ocean surveys</li>
-          <li>Dual-use tools feed scientific capability</li>
-        </ul>
+        <div class="t-title">World War II</div>
+        <p class="t-sub">Major advances in sonar, batteries, and navigation.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1953–1960</div>
-        <div class="t-title">Cold War — Bathyscaphe Trieste reaches extreme depth</div>
-        <p class="t-sub">Pressure-resistant engineering validated; deep ocean becomes accessible.</p>
-        <ul class="t-points">
-          <li>Pressure sphere approach proven</li>
-          <li>Materials and safety engineering jump forward</li>
-        </ul>
+        <div class="t-title">Cold War — Bathyscaphe Trieste</div>
+        <p class="t-sub">Human access to the deepest ocean.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1964</div>
-        <div class="t-title">DSV Alvin enters service (science/engineering milestone)</div>
-        <p class="t-sub">A workhorse for deep research—benefiting from decades of naval tech maturity.</p>
-        <ul class="t-points">
-          <li>Robotic arms + sensors + camera systems become standard</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1960s–1980s</div>
-        <div class="t-title">Cold War peak — inertial navigation, undersea cables, surveillance</div>
-        <p class="t-sub">Undersea communication + stealth demand reliability and precision.</p>
-        <ul class="t-points">
-          <li>Inertial nav, mapping, systems engineering, reliability culture</li>
-          <li>Spillover into scientific deep-sea operations</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1982</div>
-        <div class="t-title">Falklands War — modern naval ASW focus</div>
-        <p class="t-sub">Highlights the value of detection, coordination, and electronic integration.</p>
-        <ul class="t-points">
-          <li>ASW doctrine and sonar tactics refine</li>
-        </ul>
+        <div class="t-title">DSV Alvin enters service</div>
+        <p class="t-sub">Modern deep-sea scientific exploration begins.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">1990</div>
-        <div class="t-title">Shinkai 6500 (Japan) — deep scientific operations expand</div>
-        <p class="t-sub">High-performance deep submersibles become global research tools.</p>
-        <ul class="t-points">
-          <li>High-strength materials + thrusters for precise maneuvering</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">1991</div>
-        <div class="t-title">Gulf War era — precision navigation & sensor fusion accelerate</div>
-        <p class="t-sub">Data integration and positioning improve across defense tech and robotics.</p>
-        <ul class="t-points">
-          <li>Better embedded systems and real-time processing methods</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">2000s</div>
-        <div class="t-title">Autonomy and robotics mature</div>
-        <p class="t-sub">Unmanned systems accelerate: autonomy, perception, control, and miniaturization.</p>
-        <ul class="t-points">
-          <li>ROV/AUV capability increases: safer, cheaper, deeper</li>
-        </ul>
-      </div>
-
-      <div class="t-item">
-        <div class="t-date">2010s</div>
-        <div class="t-title">AI + high-resolution mapping workflows</div>
-        <p class="t-sub">Large-scale seabed mapping becomes faster and more automated.</p>
-        <ul class="t-points">
-          <li>Better sonar, vision pipelines, AI-assisted analysis</li>
-        </ul>
+        <div class="t-title">Shinkai 6500</div>
+        <p class="t-sub">Advanced maneuverable deep research submersible.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">2018</div>
-        <div class="t-title">DSV Limiting Factor — reusable full-ocean-depth capability</div>
-        <p class="t-sub">Full depth becomes repeatable: major step for deep ocean science.</p>
-        <ul class="t-points">
-          <li>Titanium pressure sphere + robust systems for repeated dives</li>
-        </ul>
+        <div class="t-title">DSV Limiting Factor</div>
+        <p class="t-sub">Reusable full-ocean-depth capability.</p>
       </div>
 
       <div class="t-item">
         <div class="t-date">Today</div>
-        <div class="t-title">Modern exploration — AUV fleets, low-cost sensors, rapid science</div>
-        <p class="t-sub">Exploration scales up: more data, more autonomy, more accessibility.</p>
-        <ul class="t-points">
-          <li>Cheaper sensors + stronger batteries + better autonomy</li>
-          <li>High-resolution mapping and multi-robot missions</li>
-        </ul>
+        <div class="t-title">AUVs, ROVs & AI-assisted mapping</div>
+        <p class="t-sub">Large-scale, autonomous ocean exploration.</p>
       </div>
 
     </div>
@@ -301,19 +222,18 @@
 
   <div class="divider"></div>
 
-  <!-- ARTICLES GRID -->
+  <!-- ARTICLES -->
   <section id="articles">
     <h2>Articles</h2>
-    <p class="sub">Dive deeper with long-form articles.</p>
+    <p class="sub">Dive deeper with long-form historical analysis.</p>
 
     <div class="grid cols-2">
-
       <article class="card">
         <h3>History of Underwater Exploration Technology</h3>
-        <p class="meta">Long-form • Systems • Submersibles</p>
+        <p class="meta">Long-form • Engineering • Submersibles</p>
         <p>
-          A detailed overview from early submersibles to modern deep-sea research vehicles,
-          including key technical systems and milestones.
+          From ancient diving practices to modern deep-sea vehicles,
+          including the technical systems that made exploration possible.
         </p>
         <p><a class="btn" href="./history-full.html">Read article</a></p>
       </article>
@@ -321,17 +241,9 @@
       <article class="card">
         <h3>More history topics</h3>
         <p class="meta">Coming soon</p>
-        <p>
-          Great expeditions, sonar evolution, deep-sea mapping, and the rise of ROVs/AUVs.
-        </p>
+        <p>Sonar evolution, great expeditions, and underwater robotics.</p>
         <p><a class="btn disabled" href="#">Coming soon</a></p>
       </article>
-
-    </div>
-
-    <div class="note" style="margin-top:1.5rem;">
-      <strong>Looking for “Why We Explore?”</strong> The PDF article has been moved to the
-      <a href="./games.html">Why Explore ?</a> page.
     </div>
   </section>
 

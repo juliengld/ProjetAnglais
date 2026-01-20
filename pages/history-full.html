@@ -6,239 +6,209 @@
   <title>History of Underwater Exploration Technology — Ocean Exploration</title>
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    /* Specific styles for the long-form article */
-    article h2 { margin-top: 2.5rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-    article h3 { margin-top: 1.5rem; color: #0b2238; }
-    .toc { background: #f4f4f4; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
-    .toc h3 { margin-top: 0; }
-    .toc ul { list-style: none; padding-left: 0; }
-    .toc li { margin-bottom: 0.5rem; }
-    .toc a { text-decoration: none; color: #0077cc; }
-    .toc a:hover { text-decoration: underline; }
-    .figure { background: #fafafa; padding: 1rem; border: 1px solid #ddd; margin: 1rem 0; text-align: center; font-style: italic; font-size: 0.9rem; border-radius: 4px; }
-
-    /* Simple war/innovation timeline */
-    .timeline { position: relative; margin: 1.5rem 0 0; padding-left: 1.5rem; }
-    .timeline::before { content: ""; position: absolute; left: 0.45rem; top: 0; bottom: 0; width: 2px; background: #e6e6e6; }
-    .t-item { position: relative; padding: 0.75rem 0 0.75rem 1rem; }
-    .t-item::before { content: ""; position: absolute; left: -0.05rem; top: 1.25rem; width: 10px; height: 10px; border-radius: 50%; background: #0b2238; }
-    .t-date { font-weight: 700; color: #0b2238; }
-    .t-title { margin: 0.15rem 0 0.35rem; font-weight: 600; }
-    .t-points { margin: 0.25rem 0 0; padding-left: 1.1rem; }
-    .t-points li { margin: 0.15rem 0; }
+    article h2 {
+      margin-top: 2.5rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    article h3 {
+      margin-top: 1.5rem;
+      color: #0b2238;
+    }
+    .toc {
+      background: #f4f4f4;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .toc li {
+      margin-bottom: 0.5rem;
+    }
+    .toc a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+    .toc a:hover {
+      text-decoration: underline;
+    }
+    .figure {
+      background: #fafafa;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      margin: 1rem 0;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+    .note {
+      background:#f4f7fb;
+      border:1px solid #d9e2ef;
+      padding:1rem;
+      border-radius:8px;
+      margin:1.5rem 0;
+    }
+    .note strong { color:#0b2238; }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="wrap nav">
-       <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
-       <nav>
-         <a href="technology.html">Technology</a>
-         <a href="articles.html" class="active">History</a>
-         <a href="interviews.html">Geopolitics</a>
-         <a href="games.html">Why Explore ?</a>
-         <a href="about.html">About Us</a>
-       </nav>
+<header>
+  <div class="wrap nav">
+    <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
+    <nav>
+      <a href="technology.html">Technology</a>
+      <a href="articles.html" class="active">History</a>
+      <a href="interviews.html">Geopolitics</a>
+      <a href="games.html">Why Explore ?</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p><a href="./articles.html" style="text-decoration:none">← Back to History</a></p>
+
+  <article style="max-width: 800px; margin-top: 1rem;">
+    <span class="tag">History & Technology</span>
+    <h1>History of Underwater Exploration Technology</h1>
+    <p class="meta">Long-form article • Engineering • Ocean Science</p>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#intro">1. Introduction</a></li>
+        <li><a href="#early">2. Early Underwater Exploration</a></li>
+        <li><a href="#military">3. Military Influence on Underwater Technology</a></li>
+        <li><a href="#bathy">4. The Bathyscaphe Era</a></li>
+        <li><a href="#modern">5. Modern Research Submersibles</a></li>
+        <li><a href="#systems">6. Key Technical Systems</a></li>
+        <li><a href="#future">7. From Military Tools to Scientific Discovery</a></li>
+        <li><a href="#conclusion">8. Conclusion</a></li>
+      </ul>
     </div>
-  </header>
 
-  <main class="wrap">
-    <p><a href="./articles.html" style="text-decoration:none">← Back to Articles</a></p>
-
-    <article style="max-width: 800px; margin-top: 1rem;">
-      <span class="tag">History & Tech</span>
-      <h1>History of Underwater Exploration Technology</h1>
-      <p class="meta">Comprehensive Review • Source: History of Underwater Exploration Technology PDF</p>
-      
-      <div class="toc">
-        <h3>Contents</h3>
-        <ul>
-          <li><a href="#intro">1. Introduction</a></li>
-          <li><a href="#war-timeline">2. Wars & Rapid Technological Acceleration (Timeline)</a></li>
-          <li><a href="#early">3. Early Submersibles: 17th-19th Century</a></li>
-          <li><a href="#bathy">4. The Bathyscaphe Era: 20th Century</a></li>
-          <li><a href="#modern">5. Modern Research Submersibles</a></li>
-          <li><a href="#systems">6. Key Technical Systems</a></li>
-          <li><a href="#advances">7. Recent Advances</a></li>
-          <li><a href="#conclusion">8. Conclusion</a></li>
-        </ul>
+    <section id="intro">
+      <h2>1. Introduction</h2>
+      <p>
+        Exploring the ocean depths has always challenged human ingenuity. Extreme pressure,
+        darkness, and cold make the deep sea one of the most hostile environments on Earth.
+        Yet, over centuries, humans developed technologies to access this hidden world.
+      </p>
+      <div class="note">
+        <strong>Central idea:</strong> underwater exploration technology evolved through a
+        combination of scientific curiosity and military necessity. Conflicts accelerated
+        engineering progress; science later repurposed these advances.
       </div>
+    </section>
 
-      <section id="intro">
-        <h2>1. Introduction</h2>
-        [cite_start]<p>Humanity has long dreamed of exploring the ocean depths despite immense challenges of pressure, cold, and darkness[cite: 7].</p>
-        <ul>
-            [cite_start]<li><strong>Ancient History:</strong> Ancient sponge divers in Greece (c. 350 BC) used heavy stones and held their breath to gather sea sponges[cite: 8].</li>
-            [cite_start]<li><strong>The Diving Bell:</strong> By Aristotle's time (4th century BC), people described lowering inverted containers to trap air underwater[cite: 9]. [cite_start]Over centuries, inventors improved on this "diving bell" concept, giving limited mobility but laying the groundwork for later submersibles[cite: 10].</li>
-        </ul>
-      </section>
+    <section id="early">
+      <h2>2. Early Underwater Exploration</h2>
+      <p>
+        Long before modern engineering, humans experimented with underwater access using
+        breath-hold diving and simple devices.
+      </p>
+      <ul>
+        <li>Ancient Greek sponge divers (≈ 350 BC)</li>
+        <li>Diving bell descriptions by Aristotle (4th century BC)</li>
+        <li>Incremental improvements through the Renaissance</li>
+      </ul>
+      <p>
+        These early efforts established the fundamental problems of underwater work:
+        air supply, buoyancy, and human survival.
+      </p>
+    </section>
 
-      <section id="war-timeline">
-        <h2>2. Wars & Rapid Technological Acceleration</h2>
-        <p>
-          Beyond scientific curiosity, major conflicts have repeatedly acted as <strong>technology accelerators</strong>.
-          Urgent military needs pushed rapid advances in underwater navigation, sensing, materials, propulsion, and autonomy—
-          technologies later reused for research submersibles and ocean science.
-        </p>
+    <section id="military">
+      <h2>3. Military Influence on Underwater Technology</h2>
+      <p>
+        The first true leaps in underwater engineering occurred during periods of conflict.
+        Naval superiority created urgent demand for stealth, endurance, and detection.
+      </p>
+      <ul>
+        <li>1775–1776: Bushnell’s <em>Turtle</em>, the first combat submersible</li>
+        <li>World War I: large-scale submarine warfare and early detection systems</li>
+        <li>World War II: sonar, batteries, navigation, and hull improvements</li>
+        <li>Cold War: deep diving, undersea cables, inertial navigation</li>
+      </ul>
+      <p>
+        Although designed for warfare, these technologies later became essential tools
+        for scientific oceanography.
+      </p>
+    </section>
 
-        <div class="timeline" aria-label="Timeline of conflicts accelerating underwater technology">
-          <div class="t-item">
-            <div class="t-date">1775–1776</div>
-            <div class="t-title">American Revolutionary War — Bushnell’s Turtle</div>
-            <ul class="t-points">
-              <li>Early combat submarine concept: sealed hull + ballast control</li>
-              <li>Manual propulsion and basic life-support constraints</li>
-              <li>Introduced core submarine engineering principles</li>
-            </ul>
-          </div>
+    <section id="bathy">
+      <h2>4. The Bathyscaphe Era</h2>
+      <h3>Bathyscaphe Trieste (1953–1960)</h3>
+      <div class="figure">
+        Bathyscaphe Trieste reaching the Challenger Deep (1960)
+      </div>
+      <p>
+        The <strong>Trieste</strong>, designed by Auguste Piccard, marked a turning point.
+        In 1960, it reached nearly 11,000 meters, proving that humans could survive
+        the deepest ocean pressures.
+      </p>
+      <ul>
+        <li>Steel pressure sphere</li>
+        <li>Gasoline-filled buoyancy float</li>
+        <li>Ballast-based ascent system</li>
+      </ul>
+    </section>
 
-          <div class="t-item">
-            <div class="t-date">1914–1918</div>
-            <div class="t-title">World War I — Submarine warfare scales up</div>
-            <ul class="t-points">
-              <li>Industrialization of submarine platforms and tactics</li>
-              <li>Early listening systems and anti-submarine countermeasures</li>
-            </ul>
-          </div>
+    <section id="modern">
+      <h2>5. Modern Research Submersibles</h2>
 
-          <div class="t-item">
-            <div class="t-date">1939–1945</div>
-            <div class="t-title">World War II — Sensors, propulsion, and underwater detection</div>
-            <ul class="t-points">
-              <li>Major advances in sonar (active/passive) and signal processing</li>
-              <li>Better batteries, hull design, and depth performance</li>
-              <li>Underwater communications and navigation techniques mature</li>
-            </ul>
-          </div>
+      <h3>DSV Alvin (1964–present)</h3>
+      <p>
+        Operated by Woods Hole Oceanographic Institution, Alvin became the backbone
+        of deep-sea science, enabling discoveries such as hydrothermal vents.
+      </p>
 
-          <div class="t-item">
-            <div class="t-date">1950s–1990s</div>
-            <div class="t-title">Cold War — Deep ocean becomes a strategic domain</div>
-            <ul class="t-points">
-              <li>Pressure-resistance, materials, and safety engineering improve fast</li>
-              <li>Navigation (incl. inertial systems), mapping, and undersea cables expand</li>
-              <li>Systems engineering drives reliability → later benefits scientific dives</li>
-            </ul>
-          </div>
+      <h3>Shinkai 6500 (1990)</h3>
+      <p>
+        Japan’s Shinkai 6500 expanded deep scientific access to 6,500 meters,
+        with precise maneuverability and advanced instrumentation.
+      </p>
 
-          <div class="t-item">
-            <div class="t-date">2000s–today</div>
-            <div class="t-title">From defense R&amp;D to science — Robotics and autonomy</div>
-            <ul class="t-points">
-              <li>AUV/ROV autonomy, better sensors, and AI-assisted mapping</li>
-              <li>Technology transfer accelerates modern ocean research capabilities</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <h3>DSV Limiting Factor (2018)</h3>
+      <p>
+        Limiting Factor is the first reusable full-ocean-depth submersible,
+        enabling repeated dives to the deepest points on Earth.
+      </p>
+    </section>
 
-      <section id="early">
-        <h2>3. Early Submersibles: 17th-19th Century Pioneers</h2>
-        
-        <h3>3.1 The Turtle (1775)</h3>
-        
+    <section id="systems">
+      <h2>6. Key Technical Systems</h2>
+      <ul>
+        <li><strong>Pressure hulls:</strong> spherical steel and titanium structures</li>
+        <li><strong>Buoyancy:</strong> syntactic foam and ballast control</li>
+        <li><strong>Propulsion:</strong> electric thrusters</li>
+        <li><strong>Life support:</strong> CO₂ scrubbing, oxygen regulation</li>
+        <li><strong>Instrumentation:</strong> sonar, cameras, robotic arms</li>
+      </ul>
+    </section>
 
-[Image of Bushnell Turtle submarine diagram]
+    <section id="future">
+      <h2>7. From Military Tools to Scientific Discovery</h2>
+      <p>
+        In the 21st century, underwater exploration increasingly relies on
+        autonomous and remotely operated vehicles. Technologies once driven
+        by defense now enable safer, cheaper, and more extensive scientific missions.
+      </p>
+      <div class="note">
+        Today’s AUVs, ROVs, and AI-based mapping systems are direct descendants
+        of decades of military-funded research.
+      </div>
+    </section>
 
-        [cite_start]<div class="figure">Figure 1: Replica of Bushnell's Turtle submarine (1775)[cite: 13].</div>
-        
-        [cite_start]<p>Designed by David Bushnell in 1775, the Turtle is widely regarded as the first manned submarine used in combat[cite: 14]. [cite_start]It attempted to attach an explosive charge to HMS Eagle in 1776, introducing core submarine principles: sealed hulls, ballast control, propulsion, and life-support[cite: 21].</p>
-        
-        <p><strong>Technical Highlights:</strong></p>
-        <ul>
-            [cite_start]<li><strong>Hull:</strong> Wooden shells reinforced with iron bands, about 2.3 m long and 1.8 m tall[cite: 16].</li>
-            [cite_start]<li><strong>Buoyancy:</strong> Water-ballast tank flooded to dive; manual pump expelled water to surface[cite: 18].</li>
-            [cite_start]<li><strong>Propulsion:</strong> Hand-cranked propellers for horizontal and vertical movement[cite: 19].</li>
-            [cite_start]<li><strong>Air Supply:</strong> Contained air for about 30 minutes; snorkel tubes renewed air near surface[cite: 20].</li>
-        </ul>
-      </section>
-
-      <section id="bathy">
-        <h2>4. The Bathyscaphe Era: 20th Century Advances</h2>
-        
-        <h3>4.1 Bathyscaphe Trieste (1953-1960)</h3>
-        
-
-[Image of Bathyscaphe Trieste]
-
-        [cite_start]<div class="figure">Figure 2: Trieste, the first submersible to reach the Challenger Deep[cite: 24].</div>
-
-        [cite_start]<p>The Trieste, designed by Auguste Piccard, reached the Challenger Deep (10,916 m) in 1960[cite: 25, 26]. [cite_start]This mission proved human survival at the deepest seafloor, introducing the modern pressure-sphere concept[cite: 33].</p>
-        
-        <p><strong>Technical Highlights:</strong></p>
-        <ul>
-            [cite_start]<li><strong>Pressure Hull:</strong> 2.16 m steel sphere with 127 mm thick walls to resist over 1,000 atmospheres[cite: 28].</li>
-            [cite_start]<li><strong>Buoyancy:</strong> Gasoline-filled float for lift, iron shot ballast dropped to ascend[cite: 29].</li>
-            [cite_start]<li><strong>Mobilité:</strong> Limited to vertical movement with minimal lateral control[cite: 30].</li>
-            [cite_start]<li><strong>Life Support:</strong> Controlled internal atmosphere for two occupants[cite: 31].</li>
-        </ul>
-      </section>
-
-      <section id="modern">
-        <h2>5. Modern Research Submersibles</h2>
-
-        <h3>5.1 DSV Alvin (1964-present)</h3>
-        
-        [cite_start]<div class="figure">Figure 3: DSV Alvin, Woods Hole Oceanographic Institution[cite: 36].</div>
-        [cite_start]<p>Operated by the WHOI, Alvin has conducted thousands of dives since 1964, including the discovery of hydrothermal vents and the Titanic[cite: 37].</p>
-        <ul>
-            [cite_start]<li><strong>Hull:</strong> Originally steel, later titanium for deeper dives[cite: 39].</li>
-            [cite_start]<li><strong>Buoyancy:</strong> Syntactic foam allows neutral buoyancy under extreme pressure[cite: 40].</li>
-            [cite_start]<li><strong>Propulsion:</strong> Electric thrusters for full maneuverability[cite: 42].</li>
-            [cite_start]<li><strong>Systems:</strong> Robotic arms, sensors, cameras, and lighting[cite: 43].</li>
-        </ul>
-
-        <h3>5.2 Shinkai 6500 (1990)</h3>
-        
-        [cite_start]<div class="figure">Figure 4: JAMSTEC's Shinkai 6500 submersible[cite: 46].</div>
-        [cite_start]<p>The Japanese Shinkai 6500 descends to 6,500 m using a titanium hull for three occupants and powerful thrusters for precise movement[cite: 47]. [cite_start]It continues to support geological and biological research worldwide[cite: 48].</p>
-
-        <h3>5.3 DSV Limiting Factor (2018)</h3>
-        
-        [cite_start]<div class="figure">Figure 5: Limiting Factor, first reusable full-ocean-depth submersible[cite: 50].</div>
-        [cite_start]<p>Built for the Five Deeps Expedition, Limiting Factor can repeatedly dive to 11,000 m[cite: 51]. [cite_start]It features a titanium pressure sphere, autonomous navigation, and life-support for two crew[cite: 52].</p>
-      </section>
-
-      <section id="systems">
-        <h2>6. Key Technical Systems</h2>
-        
-        <h3>6.1 Pressure Hulls</h3>
-        [cite_start]<p>Early wooden designs evolved into steel and titanium spheres capable of withstanding extreme pressures[cite: 56]. Spherical hulls evenly distribute stress. [cite_start]Modern designs use syntactic foam and composite modules for lighter, high-strength builds[cite: 57].</p>
-
-        <h3>6.2 Buoyancy and Ballast</h3>
-        [cite_start]<p>Manual ballast pumps in early subs were replaced by gasoline tanks (Trieste) and syntactic foam modules (modern designs), allowing fine depth control and automatic stabilization[cite: 59].</p>
-
-        <h3>6.3 Propulsion and Maneuvering</h3>
-        [cite_start]<p>Hand-cranked propellers became electric thrusters, allowing agile horizontal and vertical movement with joystick control[cite: 61].</p>
-
-        <h3>6.4 Life Support</h3>
-        [cite_start]<p>Submersibles now maintain internal pressure, recycle air, remove CO₂, and control temperature and humidity, enabling missions lasting several hours[cite: 63].</p>
-
-        <h3>6.5 Instrumentation</h3>
-        [cite_start]<p>Modern submersibles carry high-resolution cameras, sonar systems, robotic arms, and sensors to collect samples and map the seafloor[cite: 65].</p>
-      </section>
-
-      <section id="advances">
-        <h2>7. Recent Advances</h2>
-        [cite_start]<p>Submersible technology now includes[cite: 67]:</p>
-        <ul>
-            [cite_start]<li>Full-ocean-depth capable crewed vehicles (Limiting Factor)[cite: 68].</li>
-            [cite_start]<li>ROVs and AUVs that operate without pilots[cite: 69].</li>
-            [cite_start]<li>Titanium and carbon composites for strength and efficiency[cite: 70].</li>
-            [cite_start]<li>Integration with satellite and acoustic communication systems[cite: 71].</li>
-        </ul>
-      </section>
-
-      <section id="conclusion">
-        <h2>8. Conclusion</h2>
-        [cite_start]<p>From the hand-cranked Turtle to titanium deep-diving submersibles, underwater exploration technology reflects centuries of human ingenuity[cite: 74]. [cite_start]Through advances in pressure hulls, buoyancy, propulsion, and life support, we have transformed the ocean from a mysterious abyss into a domain of scientific discovery[cite: 75].</p>
-      </section>
-
-    </article>
-  </main>
-
-  <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
-  <script src="../script.js"></script>
-</body>
-</html>
+    <section id="conclusion">
+      <h2>8. Conclusion</h2>
+      <p>
+        From ancient divers to autonomous deep-sea robots, underwater exploration
+        technology reflects centuries of innovation shaped by both curiosity and conflict.
+        What began as tools for survival and warfare now serves humanity’s quest
+        to understand and
