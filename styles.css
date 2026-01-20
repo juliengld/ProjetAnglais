@@ -130,10 +130,12 @@ h2 {
 
 @media (min-width: 860px) {
   .cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
   .cols-2 {
-    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -303,3 +305,50 @@ h2 {
   object-fit:contain;
   filter: drop-shadow(0 10px 22px rgba(0,0,0,0.28));
 }
+
+
+/* ---- Home: logo sizing ---- */
+.logo-img.univ{ max-height:64px; }
+.logo-img.seatech{ max-height:88px; }
+
+/* ---- Home: initiative previews ---- */
+.initiative{ margin-top: 18px; }
+.initiative__preview{
+  position:relative;
+  border-radius: 18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  min-height: 320px;
+}
+.initiative__frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  transform: scale(1.03);
+  filter: blur(2px) saturate(0.9) brightness(0.85);
+  pointer-events:none; /* keep text clickable */
+}
+.initiative__overlay{
+  position:relative;
+  padding: 20px;
+  max-width: 920px;
+}
+@media (min-width: 860px){
+  .initiative__preview{ min-height: 360px; }
+  .initiative__overlay{ padding: 26px 28px; }
+}
+.bullets{
+  margin: 12px 0 0 0;
+  padding-left: 18px;
+}
+.bullets li{ margin: 6px 0; }
+.note{
+  margin-top: 14px;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+}
+
