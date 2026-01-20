@@ -3,57 +3,267 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Articles — Ocean Exploration</title>
+<title>History — Ocean Exploration</title>
 <link rel="stylesheet" href="../styles.css" />
+<style>
+/* Simple vertical timeline styling specific to this page */
+.timeline-visual {
+  margin: 2.5rem 0;
+}
+.timeline-track {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(148, 163, 184, 0.7);
+}
+.timeline-event {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+.timeline-dot {
+  position: absolute;
+  left: -0.6rem;
+  top: 0.2rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  background: #38bdf8;
+}
+.timeline-year {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+.timeline-title {
+  font-weight: 600;
+  margin: 0.15rem 0 0.25rem;
+}
+.timeline-description {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.history-details {
+  margin: 3rem 0 2rem;
+  display: grid;
+  gap: 2rem;
+}
+.history-block {
+  display: grid;
+  gap: 0.75rem;
+}
+.history-block img {
+  width: 100%;
+  border-radius: 0.75rem;
+  display: block;
+}
+@media (min-width: 768px) {
+  .history-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>
 </head>
 <body>
 
 <header>
-<div class="wrap nav">
-<div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
-<nav>
-<a href="./technology.html">Technology</a>
-<<<<<<< HEAD
-<a href="./articles.html" class="active">Articles</a>
-<a href="./interviews.html">Interviews</a>
-<a href="./games.html">Games</a>
-<a href="./about.html">About Us</a>
-=======
-<a href="./articles.html">History</a>
-<a href="./interviews.html">Geopolitics</a>
-<a href="./games.html">Why Explore ?</a>
-<a href="./about.html">Let's check what you've learned !</a>
->>>>>>> f740419 (Correction Onglet)
-</nav>
-</div>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <a href="../index.html">Ocean Exploration</a>
+    </div>
+    <nav>
+      <a href="./technology.html">Technology</a>
+      <a href="./articles.html">History</a>
+      <a href="./interviews.html">Geopolitics</a>
+      <a href="./games.html">Why Explore ?</a>
+      <a href="./about.html">Let's go what you've learned !</a>
+    </nav>
+  </div>
 </header>
 
 <main class="wrap">
-<h1>Articles</h1>
-<p class="sub">Read our latest research and reports directly in PDF format.</p>
+  <h1>History of Underwater Exploration</h1>
+  <p class="sub">From early diving bells to AI-powered autonomous submarines.</p>
 
-<div class="grid cols-2">
-  
-  <article class="card">
-    <span class="tag">History</span>
-    <h3>History of Underwater Exploration</h3>
-    <p class="meta">Dec 2025 • PDF Report</p>
-    <p>From the wooden "Turtle" (1775) to the titanium "Limiting Factor". A comprehensive look at the technology of the deep.</p>
-    <p><a class="btn" href="./PDFs/projet_anglais_tech_history.pdf" target="_blank">Read History</a></p>
-  </article>
+  <!-- Visual vertical timeline -->
+  <section class="timeline-visual">
+    <h2>Timeline of Key Milestones</h2>
+    <div class="timeline-track">
 
-  <article class="card">
-    <span class="tag">Analysis</span>
-    <h3>Why We Explore the Deep</h3>
-    <p class="meta">Dec 2025 • PDF Report</p>
-    <p>Scientific curiosity, economic resources, and geopolitical stakes. Understanding the motivations behind the missions.</p>
-    <p><a class="btn alt" href="./PDFs/projet_anglais_reasons.pdf" target="_blank">Read Analysis</a></p>
-  </article>
+      <div class="timeline-event">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">1825–1898</p>
+        <p class="timeline-title">Pioneers of Submarines and Diving</p>
+        <p class="timeline-description">
+          First autonomous diving suits and mechanically powered submarines such as <em>Le Plongeur</em> and the Holland VI.
+        </p>
+      </div>
 
-</div>
+      <div class="timeline-event">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">1934–1943</p>
+        <p class="timeline-title">Bathysphere &amp; Aqua-Lung</p>
+        <p class="timeline-description">
+          The Bathysphere reaches 923 m, and Cousteau &amp; Gagnan invent the Aqua-Lung, revolutionising scuba diving.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">1960–1977</p>
+        <p class="timeline-title">Trieste, Alvin &amp; Hydrothermal Vents</p>
+        <p class="timeline-description">
+          Bathyscaphe <em>Trieste</em> dives to Challenger Deep, Alvin begins service, and hydrothermal vents are discovered.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">1985–1998</p>
+        <p class="timeline-title">Rise of ROVs and AUVs</p>
+        <p class="timeline-description">
+          The Titanic is located using ROVs and the first autonomous underwater vehicles (AUVs) such as REMUS appear.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">2012–2019</p>
+        <p class="timeline-title">Extreme Deep Dives</p>
+        <p class="timeline-description">
+          Deepsea Challenger and the submersible <em>Limiting Factor</em> push human exploration to the deepest trenches.
+        </p>
+      </div>
+
+      <div class="timeline-event">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">Today &amp; Beyond</p>
+        <p class="timeline-title">Autonomous &amp; Future Missions</p>
+        <p class="timeline-description">
+          Long-range AUVs, Seabed 2030, AI-driven robots and concepts for missions to icy ocean worlds like Europa.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Detailed sections with images -->
+  <section class="history-details">
+    <article class="history-block">
+      <h2>1. Early Experiments and Pioneers (1825–1898)</h2>
+      <p>
+        In the 19<sup>th</sup> century, engineers experimented with heavy diving suits and the first submarines.
+        Designs like <em>Le Plongeur</em> in France or the Holland VI in the United States proved that underwater
+        navigation and propulsion were possible, even if range and safety were still very limited.
+      </p>
+      <figure>
+        <img src="../images/le-plongeur.jpg" alt="Historic early mechanically powered submarine">
+        <!-- Suggested source: search “Le Plongeur submarine 1864 site:commons.wikimedia.org” -->
+        <figcaption>Early mechanically powered submarines opened the way for modern underwater vehicles.</figcaption>
+      </figure>
+    </article>
+
+    <article class="history-block">
+      <h2>2. Bathysphere and the Birth of Modern Scuba (1930s–1940s)</h2>
+      <p>
+        In 1934, William Beebe and Otis Barton used the Bathysphere, a steel sphere lowered by cable, to reach 923 m,
+        a depth never seen before by humans. Less than ten years later, Jacques-Yves Cousteau and Émile Gagnan created
+        the Aqua-Lung, the first widely used open-circuit scuba system, allowing divers to move freely without a cable.
+      </p>
+      <figure>
+        <img src="../images/bathysphere.jpg" alt="Historic photo of the Bathysphere being prepared for a dive">
+        <!-- Suggested source: search “Bathysphere.jpg site:commons.wikimedia.org” -->
+        <figcaption>The Bathysphere made the first deep scientific observations possible.</figcaption>
+      </figure>
+    </article>
+
+    <article class="history-block">
+      <h2>3. Trieste, Alvin and Scientific Exploration (1960–1977)</h2>
+      <p>
+        On 23 January 1960, the bathyscaphe <em>Trieste</em> reached the bottom of the Mariana Trench at about 10,916 m,
+        with Jacques Piccard and Don Walsh on board. A few years later, the submersible Alvin entered service. It
+        would become one of the most important research subs, famously exploring hydrothermal vents and later the wreck
+        of the Titanic.
+      </p>
+      <figure>
+        <img src="../images/trieste.jpg" alt="Bathyscaphe Trieste being lifted from the water">
+        <!-- Suggested source: search “Bathyscaphe Trieste site:commons.wikimedia.org” -->
+        <figcaption><em>Trieste</em> marked the beginning of true deep-ocean human exploration.</figcaption>
+      </figure>
+    </article>
+
+    <article class="history-block">
+      <h2>4. ROVs and AUVs: Robots Take Over (1980–2000)</h2>
+      <p>
+        From the 1980s, remotely operated vehicles (ROVs) became standard tools for industry and science.
+        In 1985, ROVs and towed cameras helped locate the Titanic. At the same time, autonomous underwater vehicles
+        (AUVs) such as REMUS and Autosub were developed, capable of mapping large areas without a tether.
+      </p>
+      <figure>
+        <img src="../images/remus-auv.jpg" alt="REMUS autonomous underwater vehicle being deployed from a ship">
+        <!-- Suggested source: search “REMUS AUV site:commons.wikimedia.org” -->
+        <figcaption>AUVs like REMUS can survey huge areas of the seafloor with minimal human supervision.</figcaption>
+      </figure>
+    </article>
+
+    <article class="history-block">
+      <h2>5. Record-Breaking Deep Dives (2010s)</h2>
+      <p>
+        In 2012, filmmaker James Cameron piloted the <em>Deepsea Challenger</em> to the Mariana Trench in the deepest
+        solo dive ever achieved. Later, the submersible <em>Limiting Factor</em> completed multiple dives to the
+        deepest points of several oceans, proving that repeated access to the hadal zone is possible.
+      </p>
+      <figure>
+        <img src="../images/deepsea-challenger.jpg" alt="Deepsea Challenger submersible in the ocean">
+        <!-- Suggested source: search “Deepsea Challenger site:commons.wikimedia.org” -->
+        <figcaption>Modern one-person subs can reach the deepest trenches with high-definition cameras and sensors.</figcaption>
+      </figure>
+    </article>
+
+    <article class="history-block">
+      <h2>6. Future Projects and Ocean Worlds (2030 and Beyond)</h2>
+      <p>
+        Future ocean exploration focuses on full mapping of the seafloor (Seabed 2030), long-endurance AUVs powered by
+        advanced batteries, and permanent underwater habitats for scientists. Technologies developed for Earth’s oceans
+        will also be used to prepare missions to icy moons such as Europa, where liquid oceans may hide conditions
+        favourable to life.
+      </p>
+      <figure>
+        <img src="../images/future-ocean-robot.jpg" alt="Concept image of a futuristic autonomous underwater robot exploring the deep">
+        <!-- Suggested source: search “concept art autonomous underwater robot exploration” -->
+        <figcaption>Future robots will combine AI, advanced sensors and robust design to explore the most extreme oceans.</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- Original PDF cards kept as further reading -->
+  <section>
+    <h2>Further Reading (PDF Reports)</h2>
+    <div class="grid cols-2">
+      <article class="card">
+        <span class="tag">History</span>
+        <h3>History of Underwater Exploration</h3>
+        <p class="meta">Dec 2025 • PDF Report</p>
+        <p>From the wooden “Turtle” (1775) to modern titanium submersibles: a detailed review of deep-sea technology.</p>
+        <p><a class="btn" href="./PDFs/projet_anglais_tech_history.pdf" target="_blank">Read History</a></p>
+      </article>
+
+      <article class="card">
+        <span class="tag">Analysis</span>
+        <h3>Why We Explore the Deep</h3>
+        <p class="meta">Dec 2025 • PDF Report</p>
+        <p>Scientific curiosity, resources and geopolitics: understanding the main reasons behind deep-sea exploration.</p>
+        <p><a class="btn alt" href="./PDFs/projet_anglais_reasons.pdf" target="_blank">Read Analysis</a></p>
+      </article>
+    </div>
+  </section>
+
 </main>
 
-<footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
+<footer class="footer">
+  <div class="wrap">© <span id="year"></span> Ocean Exploration</div>
+</footer>
 <script src="../script.js"></script>
 </body>
 </html>
