@@ -1,64 +1,86 @@
 <section id="timeline">
   <style>
-    /* ===== Match your site DA (deep ocean) — scoped to #timeline only ===== */
+    /* =========================
+       Timeline — matches your DA
+       (scoped to #timeline only)
+       ========================= */
+
+    /* Reuse your tokens (hardcoded from your SCSS) */
     #timeline{
-      /* do NOT override page background; keep transparent to blend with global */
+      --ink: #eef6ff;
+      --muted: #a7c4de;
+      --c1: #49a7d9;
+      --c2: #5dd0d3;
+      --c3: #ffd166;
+      --c4: #80ed99;
+      --card: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
-    #timeline .timeline{
-      max-width: 1020px;          /* $wrap */
+    /* Make this section behave like the rest of the pages */
+    #timeline .wrap{
+      max-width: 1020px;
       margin: 0 auto;
-      padding: 0 16px;            /* container */
+      padding: 0 16px;
+    }
+
+    /* Timeline layout */
+    #timeline .timeline{
       position: relative;
       display: grid;
-      gap: 14px;
+      gap: 12px;
+      margin-top: 12px;
+      padding-left: 34px; /* space for spine + dots */
     }
 
-    /* Subtle vertical spine like “underwater cable” */
+    /* Spine */
     #timeline .timeline::before{
       content:"";
       position:absolute;
-      left: 18px;
+      left: 10px;
       top: 8px;
       bottom: 8px;
       width: 2px;
-      background: rgba(255,255,255,.12); /* $stroke */
+      background: var(--stroke);
       border-radius: 999px;
     }
 
     #timeline .t-item{
       position: relative;
-      padding-left: 42px;
     }
 
+    /* Dot */
     #timeline .t-item::before{
       content:"";
       position:absolute;
-      left: 9px;
+      left: 1px;
       top: 18px;
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: rgba(255,255,255,.06); /* $card */
-      border: 1px solid rgba(255,255,255,.12); /* $stroke */
-      box-shadow: 0 10px 30px rgba(0,0,0,.35); /* $shadow */
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
     }
 
-    /* Card matches your mixin card() */
+    /* Card in your style */
     #timeline .t-card{
-      background: rgba(255,255,255,.06);         /* $card */
-      border: 1px solid rgba(255,255,255,.12);   /* $stroke */
-      border-radius: 14px;                       /* $radius */
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
       padding: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);   /* $shadow */
+      box-shadow: var(--shadow);
     }
 
-    /* Date & tag line (keep light & readable) */
+    /* Header row: date + tag */
     #timeline .t-date{
-      color: #eef6ff; /* $ink */
+      display: inline-block;
       font-weight: 900;
-      letter-spacing: .2px;
+      color: var(--ink);
       margin-right: 8px;
+      letter-spacing: .2px;
     }
 
     #timeline .t-tag{
@@ -66,332 +88,310 @@
       font-size: 12px;
       padding: 4px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12); /* $stroke */
+      border: 1px solid var(--stroke);
       background: rgba(0,0,0,.2);
-      color: #a7c4de; /* $muted */
+      color: var(--muted);
       font-weight: 800;
-      letter-spacing: .5px;
+      letter-spacing: .55px;
       text-transform: uppercase;
     }
 
-    /* Accent variants (same palette as your tokens) */
-    #timeline .tag-foundations{ border-color: rgba(73,167,217,.45);  color: #a7c4de; }
-    #timeline .tag-war{         border-color: rgba(255,209,102,.45); color: #a7c4de; }
-    #timeline .tag-science{     border-color: rgba(128,237,153,.45); color: #a7c4de; }
-    #timeline .tag-tech{        border-color: rgba(93,208,211,.45);  color: #a7c4de; }
-    #timeline .tag-industry{    border-color: rgba(73,167,217,.45);  color: #a7c4de; }
+    /* Accent by category (border color only = clean DA) */
+    #timeline .tag-foundations{ border-color: rgba(73,167,217,.55); }
+    #timeline .tag-war{         border-color: rgba(255,209,102,.55); }
+    #timeline .tag-science{     border-color: rgba(128,237,153,.55); }
+    #timeline .tag-tech{        border-color: rgba(93,208,211,.55); }
+    #timeline .tag-industry{    border-color: rgba(73,167,217,.35); }
 
     #timeline .t-title{
       margin-top: 8px;
       font-weight: 900;
       letter-spacing: .2px;
+      color: var(--ink);
     }
 
     #timeline .t-sub{
-      color: #a7c4de; /* $muted */
-      margin: 6px 0 10px;
+      margin: 6px 0 10px 0;
+      color: var(--muted);
     }
 
     #timeline .t-points{
       margin: 0;
       padding-left: 18px;
-      color: #a7c4de; /* $muted */
+      color: var(--muted);
     }
 
-    /* Notes below timeline: same card style, not a “new page” */
-    #timeline .timeline-notes{
-      max-width: 1020px;
-      margin: 18px auto 0;
-      padding: 0 16px;
-      display: grid;
-      gap: 12px;
+    /* Notes area uses your site grid/card patterns */
+    #timeline .notes{
+      margin-top: 18px;
     }
 
-    #timeline .note-card{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      padding: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-
-    #timeline .timeline-notes h3{
-      margin: 0 0 6px 0;
-      font-size: 16px;
-      letter-spacing: .2px;
-    }
-
-    #timeline .timeline-notes p{
-      margin: 0;
-      color: #a7c4de;
-      line-height: 1.7;
-    }
-
+    /* If your global CSS already has .grid/.cols-2/.card, this will match perfectly.
+       If not, we add a safe fallback scoped to #timeline. */
+    #timeline .grid{ display: grid; gap: 12px; }
     @media (min-width: 860px){
-      #timeline .timeline-notes{
-        grid-template-columns: repeat(2, 1fr);
-      }
+      #timeline .cols-2{ grid-template-columns: repeat(2, 1fr); }
     }
+    #timeline .card{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    #timeline .meta{ color: var(--muted); font-size: 13px; }
   </style>
 
-  <h2>Timeline: Underwater Exploration & Technological Development</h2>
-  <p class="sub">
-    Key milestones where <strong>science</strong>, <strong>industry</strong>, and <strong>conflict</strong>
-    accelerated advances in diving, pressure engineering, sonar, navigation, robotics, and autonomy.
-  </p>
+  <div class="wrap">
+    <h2>Timeline: Underwater Exploration & Technological Breakthroughs</h2>
+    <p class="sub">
+      A condensed history of how <strong>science</strong>, <strong>industry</strong> and <strong>conflict</strong>
+      accelerated advances in diving, pressure engineering, sonar, navigation, robotics and autonomy.
+    </p>
 
-  <div class="timeline" aria-label="Timeline of key moments in underwater exploration and technology">
+    <div class="timeline" aria-label="Timeline of underwater exploration and technology">
 
-    <!-- FOUNDATIONS -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">350 BC</span><span class="t-tag tag-foundations">FOUNDATIONS</span>
-      <div class="t-title">Ancient breath-hold diving (Mediterranean)</div>
-      <p class="t-sub">Early free-diving for fishing, harvesting and salvage.</p>
-      <ul class="t-points"><li>Human physiology defines the first constraints: air, cold, depth.</li></ul>
-    </div></div>
+      <!-- FOUNDATIONS -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">350 BC</span><span class="t-tag tag-foundations">FOUNDATIONS</span>
+        <div class="t-title">Ancient breath-hold diving (Mediterranean)</div>
+        <p class="t-sub">Early diving for fishing, sponge harvesting and salvage.</p>
+        <ul class="t-points"><li>Human limits define the first constraints: air, cold, depth.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">4th c. BC</span><span class="t-tag tag-foundations">FOUNDATIONS</span>
-      <div class="t-title">Diving bell concept described (Aristotle)</div>
-      <p class="t-sub">Trapped air enables longer underwater work—early life-support thinking.</p>
-      <ul class="t-points"><li>Principle reused for salvage and construction for centuries.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">4th c. BC</span><span class="t-tag tag-foundations">FOUNDATIONS</span>
+        <div class="t-title">Diving bell concept described (Aristotle)</div>
+        <p class="t-sub">Trapped air enables longer underwater work—early “life-support” thinking.</p>
+        <ul class="t-points"><li>Principle reused for later diving technologies.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1495 (c.)</span><span class="t-tag tag-foundations">FOUNDATIONS</span>
-      <div class="t-title">Early diving suit concepts (Renaissance sketches)</div>
-      <p class="t-sub">First attempts to “engineer” human underwater presence beyond breath-hold.</p>
-      <ul class="t-points"><li>Introduces the idea of wearable life-support.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1531</span><span class="t-tag tag-foundations">FOUNDATIONS</span>
+        <div class="t-title">Recorded diving bell operations (Renaissance salvage)</div>
+        <p class="t-sub">Tool-assisted underwater labor becomes more common in Europe.</p>
+        <ul class="t-points"><li>Start of repeatable underwater work methods.</li></ul>
+      </div></div>
 
-     <div class="t-item"><div class="t-card">
-      <span class="t-date">1620</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">Early sealed-hull submersible ideas</div>
-      <p class="t-sub">Buoyancy control and enclosure become engineering problems, not only endurance.</p>
-      <ul class="t-points"><li>First steps toward controlled submerged navigation.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1620</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">Early sealed-hull submersible ideas</div>
+        <p class="t-sub">Buoyancy control and enclosure become engineering problems.</p>
+        <ul class="t-points"><li>First steps toward controlled submerged navigation.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1715</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">Improved diving bell systems (air supply experiments)</div>
-      <p class="t-sub">Air management becomes more controlled for underwater work.</p>
-      <ul class="t-points"><li>Bridges salvage practice and engineered diving operations.</li></ul>
-    </div></div>
+      <!-- EARLY SUBS / WAR -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1775–1776</span><span class="t-tag tag-war">WAR</span>
+        <div class="t-title">Bushnell’s Turtle (first combat sub attempt)</div>
+        <p class="t-sub">A milestone for ballast concepts and submerged operation procedures.</p>
+        <ul class="t-points"><li>Shows the need for better propulsion and endurance.</li></ul>
+      </div></div>
 
-    <!-- EARLY SUBS / WAR ACCELERATION -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1775–1776</span><span class="t-tag tag-war">WAR</span>
-      <div class="t-title">American Revolutionary War — Bushnell’s Turtle</div>
-      <p class="t-sub">First combat submarine attempt: sealed hull + ballast + propulsion concepts.</p>
-      <ul class="t-points"><li>Shows need for better energy sources and stability control.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1800</span><span class="t-tag tag-war">WAR/TECH</span>
+        <div class="t-title">Fulton’s Nautilus</div>
+        <p class="t-sub">More structured approach to operational submersibles.</p>
+        <ul class="t-points"><li>Refines navigation and endurance ideas.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1800</span><span class="t-tag tag-war">WAR</span>
-      <div class="t-title">Fulton’s Nautilus</div>
-      <p class="t-sub">More mature operational concepts for submersibles.</p>
-      <ul class="t-points"><li>Early step toward practical submerged navigation.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1861–1865</span><span class="t-tag tag-war">WAR</span>
+        <div class="t-title">Civil War — submersibles & naval mines</div>
+        <p class="t-sub">Conflict pressure exposes reliability/survivability limits.</p>
+        <ul class="t-points"><li>Hard lessons on safety and stability.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1861–1865</span><span class="t-tag tag-war">WAR</span>
-      <div class="t-title">American Civil War — submersibles & naval mines</div>
-      <p class="t-sub">Blockades push risky innovation; reliability/survivability become central issues.</p>
-      <ul class="t-points"><li>Operational lessons in stability and safety.</li></ul>
-    </div></div>
+      <!-- DIVING SCIENCE -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1907–1908</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">Decompression science formalized (Haldane model)</div>
+        <p class="t-sub">Safer deep dives become possible through systematic decompression.</p>
+        <ul class="t-points"><li>Physiology becomes a design constraint, not a guess.</li></ul>
+      </div></div>
 
-    <!-- DIVING SCIENCE / PHYSIOLOGY -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1907–1908</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">Modern decompression theory formalized (Haldane model)</div>
-      <p class="t-sub">Decompression becomes systematic, enabling deeper/longer dives with reduced risk.</p>
-      <ul class="t-points"><li>Diving physiology becomes a true engineering constraint.</li></ul>
-    </div></div>
+      <!-- ACOUSTICS / SONAR -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1914–1918</span><span class="t-tag tag-war">WAR</span>
+        <div class="t-title">World War I — submarine warfare scales up</div>
+        <p class="t-sub">Detection/countermeasures accelerate; underwater acoustics matters.</p>
+        <ul class="t-points"><li>Industrialization of undersea platforms.</li></ul>
+      </div></div>
 
-    <!-- ACOUSTICS / SONAR -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1914–1918</span><span class="t-tag tag-war">WAR</span>
-      <div class="t-title">World War I — submarine warfare scales up</div>
-      <p class="t-sub">Detection and countermeasures accelerate; underwater acoustics gains strategic value.</p>
-      <ul class="t-points"><li>Industrialization of undersea platforms.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1920s</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">Echo sounding expands bathymetry</div>
+        <p class="t-sub">Sound-based depth measurement transforms mapping and navigation.</p>
+        <ul class="t-points"><li>“Seeing with sound” becomes standard underwater.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1920s</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">Echo sounding expands bathymetry</div>
-      <p class="t-sub">Acoustic depth measurement makes mapping faster and navigation safer.</p>
-      <ul class="t-points"><li>Sound becomes the main “sense” underwater.</li></ul>
-    </div></div>
+      <!-- DEEP ENGINEERING -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1930</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">Bathysphere deep dives</div>
+        <p class="t-sub">Pressure-resistant spheres validate deep human observation.</p>
+        <ul class="t-points"><li>Key step toward modern deep submersibles.</li></ul>
+      </div></div>
 
-    <!-- DEEP ENGINEERING -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1930</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">Bathysphere deep dives</div>
-      <p class="t-sub">Tethered sphere validates pressure-resistant design at depth.</p>
-      <ul class="t-points"><li>Deep observation becomes possible with engineered pressure vessels.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1939–1945</span><span class="t-tag tag-war">WAR</span>
+        <div class="t-title">World War II — sonar, electronics, navigation</div>
+        <p class="t-sub">Massive R&D accelerates sensing, processing, batteries and integration.</p>
+        <ul class="t-points"><li>Active/passive sonar becomes far more effective.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1939–1945</span><span class="t-tag tag-war">WAR</span>
-      <div class="t-title">World War II — sonar, electronics, navigation</div>
-      <p class="t-sub">Massive R&D accelerates sensing, processing, batteries, and platform integration.</p>
-      <ul class="t-points"><li>Active/passive sonar + better signal processing.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1943</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">SCUBA era begins (Aqualung popularization)</div>
+        <p class="t-sub">Self-contained diving expands exploration, training and underwater work.</p>
+        <ul class="t-points"><li>Human access scales up beyond surface-supplied diving.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1943</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">SCUBA era begins (Aqualung popularization)</div>
-      <p class="t-sub">Self-contained diving expands operations and training.</p>
-      <ul class="t-points"><li>Broadens underwater activity beyond surface-supplied diving.</li></ul>
-    </div></div>
+      <!-- COLD WAR / PROPULSION / DEEP -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1954</span><span class="t-tag tag-war">WAR/TECH</span>
+        <div class="t-title">Nuclear propulsion transforms submarines</div>
+        <p class="t-sub">Endurance and underwater persistence increase dramatically.</p>
+        <ul class="t-points"><li>Long-duration submerged operations become practical.</li></ul>
+      </div></div>
 
-    <!-- PROPULSION / COLD WAR -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1954</span><span class="t-tag tag-war">WAR/TECH</span>
-      <div class="t-title">Nuclear propulsion for submarines (endurance leap)</div>
-      <p class="t-sub">Underwater persistence and range increase dramatically.</p>
-      <ul class="t-points"><li>Shifts submarines from “limited” to “long-duration” platforms.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1960</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">Bathyscaphe Trieste reaches Challenger Deep</div>
+        <p class="t-sub">Proof that full-ocean-depth access is physically possible.</p>
+        <ul class="t-points"><li>Reference moment for extreme pressure engineering.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1960</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">Bathyscaphe Trieste — Challenger Deep</div>
-      <p class="t-sub">Full-ocean-depth access proven possible with extreme pressure engineering.</p>
-      <ul class="t-points"><li>Reference milestone for deep pressure vessel design.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1964</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">DSV Alvin enters service</div>
+        <p class="t-sub">Deep-sea science becomes repeatable: sampling, cameras, manipulators.</p>
+        <ul class="t-points"><li>Shift from “record dives” to routine missions.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1964</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">DSV Alvin enters service</div>
-      <p class="t-sub">Deep-sea science becomes repeatable: cameras, sampling, manipulators.</p>
-      <ul class="t-points"><li>Switch from “record dives” to routine research missions.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1960s</span><span class="t-tag tag-science">SCIENCE/TECH</span>
+        <div class="t-title">Saturation diving & undersea habitats mature</div>
+        <p class="t-sub">Longer stays underwater become feasible for research and industry.</p>
+        <ul class="t-points"><li>Operational depth work expands significantly.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1960s</span><span class="t-tag tag-science">SCIENCE/TECH</span>
-      <div class="t-title">Saturation diving & undersea habitats mature</div>
-      <p class="t-sub">Longer underwater stays become feasible with controlled decompression workflows.</p>
-      <ul class="t-points"><li>Enables sustained subsea work for science and industry.</li></ul>
-    </div></div>
+      <!-- ROV / DISCOVERY -->
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1970s</span><span class="t-tag tag-industry">INDUSTRY</span>
+        <div class="t-title">ROVs become practical tools</div>
+        <p class="t-sub">Remote robotics expands inspection and intervention beyond human limits.</p>
+        <ul class="t-points"><li>Industry demand pushes robustness and tooling.</li></ul>
+      </div></div>
 
-    <!-- ROV / INDUSTRY / DISCOVERY -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1970s</span><span class="t-tag tag-industry">INDUSTRY</span>
-      <div class="t-title">ROVs become practical tools</div>
-      <p class="t-sub">Tethered robotics expands inspection and intervention beyond human depth limits.</p>
-      <ul class="t-points"><li>Industry drives reliability, tooling and operational tempo.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1977</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">Hydrothermal vents discovered</div>
+        <p class="t-sub">A turning point that drives new deep mission capabilities.</p>
+        <ul class="t-points"><li>More mapping, sampling and endurance required.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1977</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">Hydrothermal vents discovered</div>
-      <p class="t-sub">Deep-sea science shifts: new targets demand better mapping and sampling tools.</p>
-      <ul class="t-points"><li>Pushes long-duration missions and precise localization.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1985</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">Titanic wreck found (deep search & imaging)</div>
+        <p class="t-sub">Demonstrates large-area deep search workflows and navigation precision.</p>
+        <ul class="t-points"><li>Milestone for deep imaging + mission planning.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1980s</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">Digital signal processing boosts sonar & mapping</div>
-      <p class="t-sub">Computing improves filtering, classification, and acoustic imaging quality.</p>
-      <ul class="t-points"><li>Underwater sensing becomes more information-rich.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1990</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">Shinkai 6500</div>
+        <p class="t-sub">High-strength materials + thrusters enable precise deep operations.</p>
+        <ul class="t-points"><li>6,500 m access with strong maneuverability.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1985</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">Titanic wreck found (deep search & imaging)</div>
-      <p class="t-sub">Showcases deep navigation + imaging workflows and sustained search operations.</p>
-      <ul class="t-points"><li>Milestone for deep-sea search methodology.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">1990s</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">INS/DVL navigation becomes common</div>
+        <p class="t-sub">Underwater localization improves without GPS.</p>
+        <ul class="t-points"><li>Enables complex transects, revisits and reliable intervention.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1990</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">Shinkai 6500</div>
-      <p class="t-sub">High-strength materials + precise thrusters enable stable deep research operations.</p>
-      <ul class="t-points"><li>6,500 m class access with strong maneuverability.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">2000s</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">AUV missions scale up</div>
+        <p class="t-sub">Autonomous surveys expand: mapping, monitoring, repeatable data collection.</p>
+        <ul class="t-points"><li>Exploration becomes faster and more frequent.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">1990s</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">INS/DVL navigation becomes common</div>
-      <p class="t-sub">Inertial + Doppler velocity log improves positioning without GPS underwater.</p>
-      <ul class="t-points"><li>Enables complex transects, revisits and reliable intervention.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">2010</span><span class="t-tag tag-industry">INDUSTRY</span>
+        <div class="t-title">Deepwater Horizon highlights subsea robotics dependence</div>
+        <p class="t-sub">ROVs are central for deep intervention, inspection and monitoring.</p>
+        <ul class="t-points"><li>Pushes operational maturity and tooling.</li></ul>
+      </div></div>
 
-    <!-- AUTONOMY / MODERN ERA -->
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">2000s</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">AUV missions scale up</div>
-      <p class="t-sub">Autonomous surveys expand: mapping, monitoring, repeatable data collection.</p>
-      <ul class="t-points"><li>More missions → more data → faster iteration.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">2010s</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">High-resolution mapping (AUV/ROV) becomes mainstream</div>
+        <p class="t-sub">Better batteries, sensors and compute accelerate exploration and seabed mapping.</p>
+        <ul class="t-points"><li>More area covered with lower risk and cost.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">2010</span><span class="t-tag tag-industry">INDUSTRY</span>
-      <div class="t-title">Deepwater Horizon — subsea response at scale</div>
-      <p class="t-sub">Highlights dependence on ROV fleets for deep intervention and monitoring.</p>
-      <ul class="t-points"><li>Pushes tooling robustness and operational capability.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">2018</span><span class="t-tag tag-science">SCIENCE</span>
+        <div class="t-title">DSV Limiting Factor</div>
+        <p class="t-sub">Reusable full-ocean-depth capability makes the deepest ocean repeatable.</p>
+        <ul class="t-points"><li>Full-depth dives become closer to routine missions.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">2010s</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">High-resolution mapping (AUV/ROV) becomes mainstream</div>
-      <p class="t-sub">Better batteries, sensors and compute accelerate exploration and seabed mapping.</p>
-      <ul class="t-points"><li>Exploration becomes scalable, faster, and lower-risk.</li></ul>
-    </div></div>
+      <div class="t-item"><div class="t-card">
+        <span class="t-date">2020s</span><span class="t-tag tag-tech">TECH</span>
+        <div class="t-title">AI-assisted perception & long-duration autonomy</div>
+        <p class="t-sub">Smarter planning, onboard detection, and better energy management extend reach.</p>
+        <ul class="t-points"><li>Shorter “mission → insight” cycles accelerate exploration.</li></ul>
+      </div></div>
 
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">2018</span><span class="t-tag tag-science">SCIENCE</span>
-      <div class="t-title">DSV Limiting Factor</div>
-      <p class="t-sub">Reusable full-ocean-depth capability makes the deepest ocean repeatable.</p>
-      <ul class="t-points"><li>Full-depth dives move toward routine operations.</li></ul>
-    </div></div>
-
-    <div class="t-item"><div class="t-card">
-      <span class="t-date">2020s</span><span class="t-tag tag-tech">TECH</span>
-      <div class="t-title">AI-assisted perception & long-duration autonomy</div>
-      <p class="t-sub">Onboard detection, smarter planning, and better energy management extend reach.</p>
-      <ul class="t-points"><li>Shorter “data-to-insight” loops for exploration.</li></ul>
-    </div></div>
-
-  </div>
-
-  <!-- Under-timeline paragraphs: same DA, same card style -->
-  <div class="timeline-notes" aria-label="Explanatory notes">
-    <div class="note-card">
-      <h3>WWI → WWII: le passage au “système”</h3>
-      <p>
-        L’accélération ne vient pas d’un seul gadget : elle vient de l’intégration.
-        Détection acoustique (écoute/sonar), traitement du signal, navigation, énergie et doctrine d’emploi
-        doivent fonctionner ensemble. Cette logique “plateforme + capteurs + procédures” deviendra ensuite
-        le standard des véhicules scientifiques et industriels.
-      </p>
     </div>
 
-    <div class="note-card">
-      <h3>1960–1964: du record à l’outil scientifique</h3>
-      <p>
-        Trieste prouve le possible, Alvin rend le profond “utilisable”.
-        Caméras, prélèvements, bras manipulateurs : la valeur vient de la répétabilité des missions,
-        pas seulement de la profondeur atteinte. C’est là que l’exploration devient un programme.
-      </p>
+    <!-- Notes below, in your site's card/grid style -->
+    <div class="notes">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="meta">Key moment</div>
+          <h3>WWI → WWII: the “systems” leap</h3>
+          <p>
+            The big acceleration isn’t one invention—it’s integration. Sonar/hydrophones, signal processing,
+            navigation, power and operational procedures evolve together. This “platform + sensors + doctrine”
+            becomes the blueprint for modern scientific and industrial underwater vehicles.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="meta">Key moment</div>
+          <h3>1960–1964: from records to routine science</h3>
+          <p>
+            Trieste proves the physics of full-depth access. Alvin makes deep exploration operational:
+            repeatable missions with cameras, sampling tools and manipulators. That shift turns exploration
+            into sustained research programs rather than one-off feats.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="meta">Key moment</div>
+          <h3>ROVs: depth stops being a “human limit”</h3>
+          <p>
+            With ROVs (and offshore demand), depth becomes a design constraint instead of a physiological barrier:
+            tether management, energy, lighting/visibility, tooling, localization and reliability. Operations become
+            safer, longer and more capable.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="meta">Key moment</div>
+          <h3>2010s–2020s: autonomy + data pipelines</h3>
+          <p>
+            AUV/ROV mapping turns exploration into a scalable workflow: plan → collect massive data → process fast → iterate.
+            AI-assisted detection/triage reduces the time from mission to decisions, increasing the pace of exploration.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="note-card">
-      <h3>ROV & industrie: profondeur ≠ limite humaine</h3>
-      <p>
-        Avec les ROV (puis la montée en puissance de l’offshore), la profondeur cesse d’être une barrière “humaine”.
-        Elle devient une contrainte de conception : tether, énergie, fiabilité, outils, visibilité, localisation.
-        Résultat : des opérations plus sûres, plus longues, plus outillées.
-      </p>
-    </div>
-
-    <div class="note-card">
-      <h3>2010s–2020s: autonomie + données = échelle</h3>
-      <p>
-        Les AUV/ROV modernes transforment l’exploration en workflow : planifier → collecter massivement →
-        traiter vite → itérer. L’IA (tri, détection, annotation) réduit le temps entre mission et décision,
-        ce qui accélère la cadence d’exploration et la production de connaissances.
-      </p>
-    </div>
   </div>
 </section>
