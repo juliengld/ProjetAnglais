@@ -7,30 +7,40 @@
   <link rel="stylesheet" href="../styles.css" />
 
   <style>
-    .sub { max-width: 75ch; }
+    .sub { max-width: 80ch; }
 
-    .stack {
+    /* Smaller, cleaner stacked layout */
+    .stack{
       display: grid;
-      gap: 22px;
-      margin-top: 22px;
+      gap: 18px;
+      margin-top: 18px;
     }
 
-    .video-card {
+    .video-card{
       padding: 16px;
     }
 
-    .video-meta {
+    /* Make the video vignette smaller than full width */
+    .video-wrap{
+      max-width: 720px;   /* adjust to taste: 640 / 720 / 800 */
+    }
+
+    .video-title{
+      margin: 0 0 6px;
+      font-weight: 800;   /* bold title */
+      letter-spacing: 0.2px;
+    }
+
+    /* Preamble below title */
+    .video-preamble{
       margin: 0 0 12px;
       color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 70ch;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      max-width: 80ch;
     }
 
-    .video-title {
-      margin: 10px 0 6px;
-    }
-
-    .frame {
+    .frame{
       position: relative;
       aspect-ratio: 16 / 9;
       border: 1px solid var(--stroke);
@@ -39,7 +49,8 @@
       background: rgba(255,255,255,0.03);
     }
 
-    .yt {
+    /* Click-to-load thumbnail */
+    .yt{
       position: absolute;
       inset: 0;
       display: grid;
@@ -47,16 +58,17 @@
       cursor: pointer;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .yt::before {
+    .yt::before{
       content:"";
       position:absolute;
       inset:0;
       background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
     }
 
-    .play {
+    .play{
       position: relative;
       display: inline-flex;
       align-items: center;
@@ -66,29 +78,26 @@
       border: 1px solid rgba(255,255,255,0.3);
       background: rgba(0,0,0,0.4);
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .play svg {
-      width: 18px;
-      height: 18px;
-    }
+    .play svg{ width: 18px; height: 18px; }
 
-    .frame iframe {
+    .frame iframe{
       width: 100%;
       height: 100%;
       border: 0;
       display: block;
     }
 
-    .tagrow {
+    .tagrow{
       display:flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 10px;
     }
 
-    .tag {
+    .tag{
       font-size: 12px;
       padding: 6px 10px;
       border: 1px solid var(--stroke);
@@ -115,93 +124,117 @@
 
 <main class="wrap">
   <h1>Geopolitics</h1>
+
+  <!-- NEW: global intro paragraph on major geopolitical issues -->
   <p class="sub">
-    Three videos highlighting key strategic dimensions of ocean exploration:
-    power competition in the deep sea, scientific discovery, and the geopolitics
-    of critical marine resources.
+    Underwater exploration is no longer only about science: it has become a strategic field where states and industries
+    compete for <strong>knowledge</strong>, <strong>resources</strong>, and <strong>influence</strong>.
+    High-resolution seabed mapping, access to extreme depths, and advanced robotics can translate into a long-term advantage:
+    they support claims and negotiations, secure critical supply chains (metals needed for technology and energy transition),
+    and shape the rules for what can be done in international waters. At the same time, this competition raises major
+    questions about <strong>governance</strong>, <strong>environmental protection</strong>, and <strong>who controls data</strong>
+    about the deep ocean.
   </p>
 
-  <section class="stack">
+  <p class="sub">
+    Below are three videos highlighting different strategic dimensions of ocean exploration.
+  </p>
+
+  <section class="stack" aria-label="Videos">
 
     <!-- VIDEO 1 -->
     <article class="card video-card">
-      <p class="video-meta">
-        This video shows how the deepest areas of the ocean are becoming strategic spaces.
-        Beyond scientific exploration, access to extreme depths is increasingly linked to
-        technological leadership, geopolitical influence, and long-term control of seabed knowledge.
-      </p>
+      <div class="video-wrap">
+        <h3 class="video-title">This Discovery in the Mariana Trench Will Transform Geopolitics</h3>
+        <p class="video-preamble">
+          A focus on deep-ocean access as a power enabler: who can reach, map, and operate in extreme depths can shape
+          influence through superior technology, strategic presence, and control of seabed knowledge.
+        </p>
 
-      <div class="frame">
-        <div class="yt"
-             data-id="6NnLfbTCM2I"
-             style="background-image:url('https://i.ytimg.com/vi/6NnLfbTCM2I/hqdefault.jpg');">
-          <div class="play">
-            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-            Watch video
+        <div class="frame">
+          <div class="yt"
+               role="button"
+               tabindex="0"
+               aria-label="Play video: Mariana Trench geopolitics"
+               data-id="6NnLfbTCM2I"
+               data-title="This Discovery in the Mariana Trench Will Transform Geopolitics (4K)"
+               style="background-image:url('https://i.ytimg.com/vi/6NnLfbTCM2I/hqdefault.jpg');">
+            <div class="play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              Watch video
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3 class="video-title">This Discovery in the Mariana Trench Will Transform Geopolitics</h3>
-      <div class="tagrow">
-        <span class="tag">Geopolitics</span>
-        <span class="tag">Deep sea</span>
-        <span class="tag">Mariana Trench</span>
+        <div class="tagrow">
+          <span class="tag">Geopolitics</span>
+          <span class="tag">Deep sea</span>
+          <span class="tag">Mariana Trench</span>
+        </div>
       </div>
     </article>
 
     <!-- VIDEO 2 -->
     <article class="card video-card">
-      <p class="video-meta">
-        This talk focuses on deep-sea exploration from a scientific and technological perspective.
-        It highlights how robotics, autonomous systems, and mapping technologies are essential
-        to understand marine ecosystems and to guide future political and environmental decisions.
-      </p>
+      <div class="video-wrap">
+        <h3 class="video-title">Exploring the Deep Sea with Dr. Katy Croff Bell</h3>
+        <p class="video-preamble">
+          A science-first view of exploration: how robotics, sensing, and mapping unlock discovery (ecosystems, geology),
+          and why better knowledge is essential to set informed policies and protection strategies.
+        </p>
 
-      <div class="frame">
-        <div class="yt"
-             data-id="KybuUy392ZQ"
-             style="background-image:url('https://i.ytimg.com/vi/KybuUy392ZQ/hqdefault.jpg');">
-          <div class="play">
-            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-            Watch video
+        <div class="frame">
+          <div class="yt"
+               role="button"
+               tabindex="0"
+               aria-label="Play video: Dr. Katy Croff Bell deep sea exploration"
+               data-id="KybuUy392ZQ"
+               data-title="Exploring the Deep Sea with Dr. Katy Croff Bell"
+               style="background-image:url('https://i.ytimg.com/vi/KybuUy392ZQ/hqdefault.jpg');">
+            <div class="play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              Watch video
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3 class="video-title">Exploring the Deep Sea with Dr. Katy Croff Bell</h3>
-      <div class="tagrow">
-        <span class="tag">Science</span>
-        <span class="tag">Robotics</span>
-        <span class="tag">Biodiversity</span>
+        <div class="tagrow">
+          <span class="tag">Science</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Biodiversity</span>
+        </div>
       </div>
     </article>
 
     <!-- VIDEO 3 -->
     <article class="card video-card">
-      <p class="video-meta">
-        This video addresses the geopolitical stakes of deep-sea mining.
-        It explains how growing demand for critical minerals raises major challenges
-        related to environmental risks, supply chain security, and international governance
-        of the ocean floor.
-      </p>
+      <div class="video-wrap">
+        <h3 class="video-title">Deep Sea Mining and the Future of Resource Geopolitics</h3>
+        <p class="video-preamble">
+          A look at deep-sea mining as a geopolitical issue: critical minerals, supply-chain security, environmental risks,
+          and the global rules needed to govern extraction in the deep ocean.
+        </p>
 
-      <div class="frame">
-        <div class="yt"
-             data-id="Hzx7kyN0Y3s"
-             style="background-image:url('https://i.ytimg.com/vi/Hzx7kyN0Y3s/hqdefault.jpg');">
-          <div class="play">
-            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-            Watch video
+        <div class="frame">
+          <div class="yt"
+               role="button"
+               tabindex="0"
+               aria-label="Play video: Deep sea mining and resource geopolitics"
+               data-id="Hzx7kyN0Y3s"
+               data-title="Deep Sea Mining and the Future of Resource Geopolitics"
+               style="background-image:url('https://i.ytimg.com/vi/Hzx7kyN0Y3s/hqdefault.jpg');">
+            <div class="play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+              Watch video
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3 class="video-title">Deep Sea Mining and the Future of Resource Geopolitics</h3>
-      <div class="tagrow">
-        <span class="tag">Resources</span>
-        <span class="tag">Mining</span>
-        <span class="tag">Governance</span>
+        <div class="tagrow">
+          <span class="tag">Resources</span>
+          <span class="tag">Mining</span>
+          <span class="tag">Governance</span>
+        </div>
       </div>
     </article>
 
@@ -215,16 +248,36 @@
 <script src="../script.js"></script>
 
 <script>
+  function mountYouTube(el){
+    const id = el.dataset.id;
+    const title = el.dataset.title || "YouTube video";
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0";
+    iframe.title = title;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+
+    const frame = el.parentElement;
+    frame.innerHTML = "";
+    frame.appendChild(iframe);
+  }
+
   document.querySelectorAll(".yt").forEach(el => {
-    el.addEventListener("click", () => {
-      const id = el.dataset.id;
-      const iframe = document.createElement("iframe");
-      iframe.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
-      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.allowFullscreen = true;
-      el.parentElement.innerHTML = "";
-      el.parentElement.appendChild(iframe);
+    el.addEventListener("click", () => mountYouTube(el));
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        mountYouTube(el);
+      }
     });
+
+    // Light preload of thumbnail image
+    const bg = el.style.backgroundImage;
+    const m = bg && bg.match(/url\(['"]?(.*?)['"]?\)/);
+    if (m && m[1]) {
+      const img = new Image();
+      img.src = m[1];
+    }
   });
 </script>
 </body>
