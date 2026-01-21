@@ -4,45 +4,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Geopolitics — Ocean Exploration</title>
 <link rel="stylesheet" href="../styles.css" />
+
+<style>
+  /* Page-specific polish (keeps your global styles intact) */
+  .sub { max-width: 70ch; }
+  .video-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    align-items: start;
+    margin-top: 18px;
+  }
+  .video-card .frame{
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--stroke);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
+  }
+  .video-card iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display:block;
+  }
+  .tagrow{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .tag{
+    font-size: 12px;
+    padding: 6px 10px;
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    color: var(--muted);
+    background: rgba(255,255,255,0.02);
+  }
+</style>
 </head>
 <body>
 <header>
-<div class="wrap nav">
-<div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
-<nav>
-<a href="./technology.html">Technology</a>
-<a href="./articles.html">History</a>
-<a href="./interviews.html">Geopolitics</a>
-<a href="./games.html">Why Explore ?</a>
-<a href="./about.html">Let's check what you've learned !</a>
-</nav>
-</div>
+  <div class="wrap nav">
+    <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
+    <nav>
+      <a href="./technology.html">Technology</a>
+      <a href="./articles.html">History</a>
+      <a href="./interviews.html" aria-current="page">Geopolitics</a>
+      <a href="./games.html">Why Explore ?</a>
+      <a href="./about.html">Let's check what you've learned !</a>
+    </nav>
+  </div>
 </header>
 
-
 <main class="wrap">
-<h1>Geopolitics</h1>
-<p class="sub">Embed YouTube/Vimeo or use HTML5 video.</p>
-<div class="grid cols-2">
-<article class="card">
-<div style="aspect-ratio:16/9;border:1px solid var(--stroke);border-radius:12px;overflow:hidden">
-<!-- Example embed: replace VIDEO_ID -->
-<!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="Interview" frameborder="0" allowfullscreen></iframe> -->
-<div class="meta" style="display:grid;place-items:center;height:100%">Embed your video here</div>
-</div>
-<h3>Talking AUV Navigation</h3>
-<p class="meta">Guest • Duration</p>
-</article>
-<article class="card">
-<div style="aspect-ratio:16/9;border:1px solid var(--stroke);border-radius:12px;overflow:hidden">
-<div class="meta" style="display:grid;place-items:center;height:100%">Interview placeholder</div>
-</div>
-<h3>Life at 6,000 m</h3>
-<p class="meta">Guest • Duration</p>
-</article>
-</div>
-</main>
+  <h1>Geopolitics</h1>
+  <p class="sub">
+    Three English videos that cover different strategic dimensions of ocean exploration: power competition in the deep sea,
+    deep‑sea science & discovery, and the geopolitics of critical resources.
+  </p>
 
+  <div class="video-grid">
+    <article class="card video-card">
+      <div class="frame">
+        <iframe
+          src="https://www.youtube.com/embed/6NnLfbTCM2I?rel=0"
+          title="This Discovery in the Mariana Trench Will Transform Geopolitics (4K)"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3>This Discovery in the Mariana Trench Will Transform Geopolitics</h3>
+      <p class="meta">Topic • Great‑power competition in the deep sea</p>
+      <div class="tagrow">
+        <span class="tag">Geopolitics</span>
+        <span class="tag">Seabed strategy</span>
+        <span class="tag">Mariana Trench</span>
+      </div>
+    </article>
+
+    <article class="card video-card">
+      <div class="frame">
+        <iframe
+          src="https://www.youtube.com/embed/KybuUy392ZQ?rel=0"
+          title="Exploring the Deep Sea with Dr. Katy Croff Bell"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3>Exploring the Deep Sea with Dr. Katy Croff Bell</h3>
+      <p class="meta">Topic • Deep‑sea science, tech and discovery</p>
+      <div class="tagrow">
+        <span class="tag">Deep‑sea R&amp;D</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">Biodiversity</span>
+      </div>
+    </article>
+
+    <article class="card video-card">
+      <div class="frame">
+        <iframe
+          src="https://www.youtube.com/embed/Hzx7kyN0Y3s?rel=0"
+          title="Deep Sea Mining and the Future of Resource Geopolitics"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3>Deep Sea Mining and the Future of Resource Geopolitics</h3>
+      <p class="meta">Topic • Critical minerals, supply chains & governance</p>
+      <div class="tagrow">
+        <span class="tag">Deep‑sea mining</span>
+        <span class="tag">Critical minerals</span>
+        <span class="tag">Governance</span>
+      </div>
+    </article>
+  </div>
+</main>
 
 <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
 <script src="../script.js"></script>
