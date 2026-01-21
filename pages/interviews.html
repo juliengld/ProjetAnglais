@@ -1,49 +1,141 @@
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Geopolitics — Ocean Exploration</title>
-<link rel="stylesheet" href="../styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geopolitics — Ocean Exploration</title>
+  <link rel="stylesheet" href="../styles.css" />
 
-<style>
-  /* Page-specific polish (keeps your global styles intact) */
-  .sub { max-width: 70ch; }
-  .video-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
-    align-items: start;
-    margin-top: 18px;
-  }
-  .video-card .frame{
-    aspect-ratio: 16 / 9;
-    border: 1px solid var(--stroke);
-    border-radius: 14px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.02);
-  }
-  .video-card iframe{
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display:block;
-  }
-  .tagrow{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-  }
-  .tag{
-    font-size: 12px;
-    padding: 6px 10px;
-    border: 1px solid var(--stroke);
-    border-radius: 999px;
-    color: var(--muted);
-    background: rgba(255,255,255,0.02);
-  }
-</style>
+  <style>
+    /* Page-specific polish (keeps your global styles intact) */
+    .sub { max-width: 75ch; }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .video-card {
+      padding: 16px;
+    }
+
+    .video-title {
+      margin: 10px 0 6px;
+    }
+
+    .video-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* Click-to-load placeholder */
+    .yt {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      user-select: none;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .yt::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+    }
+
+    .yt .play {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .yt .play svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .yt small {
+      position: relative;
+      margin-top: 8px;
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0 12px;
+    }
+
+    .frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .tagrow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 6px 10px;
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--stroke);
+      margin: 22px 0;
+      opacity: 0.9;
+    }
+
+    .explain {
+      display: grid;
+      gap: 14px;
+    }
+    .explain .card {
+      padding: 16px;
+    }
+    .explain h3 {
+      margin-top: 0;
+    }
+    .explain ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
 <header>
   <div class="wrap nav">
@@ -61,24 +153,38 @@
 <main class="wrap">
   <h1>Geopolitics</h1>
   <p class="sub">
-    Three English videos that cover different strategic dimensions of ocean exploration: power competition in the deep sea,
-    deep‑sea science & discovery, and the geopolitics of critical resources.
+    Three English videos that cover different strategic dimensions of ocean exploration:
+    power competition in the deep sea, deep-sea science & discovery, and the geopolitics of critical resources.
   </p>
 
-  <div class="video-grid">
+  <!-- VIDEOS: stacked one after another -->
+  <section class="stack" aria-label="Videos">
+    <!-- 1 -->
     <article class="card video-card">
       <div class="frame">
-        <iframe
-          src="https://www.youtube.com/embed/6NnLfbTCM2I?rel=0"
-          title="This Discovery in the Mariana Trench Will Transform Geopolitics (4K)"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+        <div class="yt"
+             data-yt-id="6NnLfbTCM2I"
+             data-yt-title="This Discovery in the Mariana Trench Will Transform Geopolitics (4K)"
+             style="background-image:url('https://i.ytimg.com/vi/6NnLfbTCM2I/hqdefault.jpg');">
+          <div class="play" role="button" tabindex="0" aria-label="Play video: Mariana Trench geopolitics">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M8 5v14l11-7z"></path>
+            </svg>
+            Watch video
+          </div>
+          <small>Click to load and play (YouTube)</small>
+        </div>
+        <noscript>
+          <iframe
+            src="https://www.youtube.com/embed/6NnLfbTCM2I?rel=0"
+            title="This Discovery in the Mariana Trench Will Transform Geopolitics (4K)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </noscript>
       </div>
-      <h3>This Discovery in the Mariana Trench Will Transform Geopolitics</h3>
-      <p class="meta">Topic • Great‑power competition in the deep sea</p>
+
+      <h3 class="video-title">This Discovery in the Mariana Trench Will Transform Geopolitics</h3>
+      <p class="video-meta">Topic • Great-power competition in the deep sea</p>
       <div class="tagrow">
         <span class="tag">Geopolitics</span>
         <span class="tag">Seabed strategy</span>
@@ -86,49 +192,150 @@
       </div>
     </article>
 
+    <!-- 2 -->
     <article class="card video-card">
       <div class="frame">
-        <iframe
-          src="https://www.youtube.com/embed/KybuUy392ZQ?rel=0"
-          title="Exploring the Deep Sea with Dr. Katy Croff Bell"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+        <div class="yt"
+             data-yt-id="KybuUy392ZQ"
+             data-yt-title="Exploring the Deep Sea with Dr. Katy Croff Bell"
+             style="background-image:url('https://i.ytimg.com/vi/KybuUy392ZQ/hqdefault.jpg');">
+          <div class="play" role="button" tabindex="0" aria-label="Play video: Dr. Katy Croff Bell deep sea exploration">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M8 5v14l11-7z"></path>
+            </svg>
+            Watch video
+          </div>
+          <small>Click to load and play (YouTube)</small>
+        </div>
+        <noscript>
+          <iframe
+            src="https://www.youtube.com/embed/KybuUy392ZQ?rel=0"
+            title="Exploring the Deep Sea with Dr. Katy Croff Bell"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </noscript>
       </div>
-      <h3>Exploring the Deep Sea with Dr. Katy Croff Bell</h3>
-      <p class="meta">Topic • Deep‑sea science, tech and discovery</p>
+
+      <h3 class="video-title">Exploring the Deep Sea with Dr. Katy Croff Bell</h3>
+      <p class="video-meta">Topic • Deep-sea science, tech and discovery</p>
       <div class="tagrow">
-        <span class="tag">Deep‑sea R&amp;D</span>
+        <span class="tag">Deep-sea R&amp;D</span>
         <span class="tag">Robotics</span>
         <span class="tag">Biodiversity</span>
       </div>
     </article>
 
+    <!-- 3 -->
     <article class="card video-card">
       <div class="frame">
-        <iframe
-          src="https://www.youtube.com/embed/Hzx7kyN0Y3s?rel=0"
-          title="Deep Sea Mining and the Future of Resource Geopolitics"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+        <div class="yt"
+             data-yt-id="Hzx7kyN0Y3s"
+             data-yt-title="Deep Sea Mining and the Future of Resource Geopolitics"
+             style="background-image:url('https://i.ytimg.com/vi/Hzx7kyN0Y3s/hqdefault.jpg');">
+          <div class="play" role="button" tabindex="0" aria-label="Play video: Deep sea mining and resource geopolitics">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M8 5v14l11-7z"></path>
+            </svg>
+            Watch video
+          </div>
+          <small>Click to load and play (YouTube)</small>
+        </div>
+        <noscript>
+          <iframe
+            src="https://www.youtube.com/embed/Hzx7kyN0Y3s?rel=0"
+            title="Deep Sea Mining and the Future of Resource Geopolitics"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </noscript>
       </div>
-      <h3>Deep Sea Mining and the Future of Resource Geopolitics</h3>
-      <p class="meta">Topic • Critical minerals, supply chains & governance</p>
+
+      <h3 class="video-title">Deep Sea Mining and the Future of Resource Geopolitics</h3>
+      <p class="video-meta">Topic • Critical minerals, supply chains & governance</p>
       <div class="tagrow">
-        <span class="tag">Deep‑sea mining</span>
+        <span class="tag">Deep-sea mining</span>
         <span class="tag">Critical minerals</span>
         <span class="tag">Governance</span>
       </div>
     </article>
-  </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPLANATIONS: after the videos -->
+  <section class="explain" aria-label="What each video shows">
+    <h2>What these videos show — the major current stakes</h2>
+
+    <article class="card">
+      <h3>1) Mariana Trench — competition for access, influence, and capability</h3>
+      <ul>
+        <li><strong>Strategic presence:</strong> deep-ocean access is linked to influence over seabed areas and future resource options.</li>
+        <li><strong>Technology race:</strong> submersibles, autonomous systems, mapping, and communications become “power enablers”.</li>
+        <li><strong>Control of knowledge:</strong> owning high-resolution seabed data can shape negotiations and long-term claims.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>2) Dr. Katy Croff Bell — exploration science, discovery, and why it matters</h3>
+      <ul>
+        <li><strong>Scientific unknowns:</strong> deep oceans remain under-mapped; exploration drives new discoveries (ecosystems, geology).</li>
+        <li><strong>Robotics & sensing:</strong> ROV/AUV, imaging, and sampling enable access to extreme environments.</li>
+        <li><strong>Policy implications:</strong> better science informs protection strategies and the “rules” for future activities at depth.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>3) Deep-sea mining — critical minerals, supply chains, and global governance</h3>
+      <ul>
+        <li><strong>Resource security:</strong> demand for nickel/cobalt/copper drives interest in seabed minerals (and tensions).</li>
+        <li><strong>Environmental risk:</strong> uncertainty about ecosystem impacts fuels calls for regulation, caution, or moratoria.</li>
+        <li><strong>International rules:</strong> governance (permits, standards, monitoring) becomes a geopolitical battleground.</li>
+      </ul>
+    </article>
+  </section>
 </main>
 
-<footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
+<footer class="footer">
+  <div class="wrap">© <span id="year"></span> Ocean Exploration</div>
+</footer>
+
 <script src="../script.js"></script>
+
+<script>
+  // Click-to-load YouTube embeds (fast "preload" via thumbnails, real player on click)
+  function mountYouTube(el) {
+    const id = el.getAttribute("data-yt-id");
+    const title = el.getAttribute("data-yt-title") || "YouTube video";
+    const iframe = document.createElement("iframe");
+
+    // autoplay=1 so it plays right after click
+    iframe.src = "https://www.youtube.com/embed/" + encodeURIComponent(id) + "?rel=0&autoplay=1";
+    iframe.title = title;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+
+    // Replace placeholder with the real iframe
+    const frame = el.parentElement;
+    frame.innerHTML = "";
+    frame.appendChild(iframe);
+  }
+
+  document.querySelectorAll(".yt").forEach(el => {
+    el.addEventListener("click", () => mountYouTube(el));
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        mountYouTube(el);
+      }
+    });
+
+    // "Preload" the thumbnail a bit more reliably (optional but helps)
+    const bg = el.style.backgroundImage;
+    const urlMatch = bg && bg.match(/url\(['"]?(.*?)['"]?\)/);
+    if (urlMatch && urlMatch[1]) {
+      const img = new Image();
+      img.src = urlMatch[1];
+    }
+  });
+</script>
 </body>
 </html>
