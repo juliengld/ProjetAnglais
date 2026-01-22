@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>History — Ocean Exploration</title>
 
-  <!-- Main site style -->
   <link rel="stylesheet" href="../styles.css" />
 
-  <!-- Page-only styles (scoped) -->
   <style>
     :root{
       --ink: var(--ink, #eef6ff);
@@ -21,7 +19,6 @@
       --stroke: rgba(255,255,255,.12);
       --radius: 14px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --glass: rgba(0,0,0,.18);
     }
 
     .sub{ max-width: 82ch; }
@@ -123,15 +120,13 @@
     }
 
     /* ================= TIMELINE ================= */
-    #timeline{
-      margin-top: 10px;
-    }
+    #timeline{ margin-top: 10px; }
 
     .timeline{
       position: relative;
       display: grid;
       gap: 14px;
-      padding-left: 34px; /* spine area */
+      padding-left: 34px;
       margin-top: 10px;
     }
     .timeline::before{
@@ -145,9 +140,7 @@
       border-radius: 999px;
     }
 
-    .t-item{
-      position: relative;
-    }
+    .t-item{ position: relative; }
 
     .t-item::before{
       content:"";
@@ -185,7 +178,12 @@
       white-space: nowrap;
     }
 
-    .t-tags{ display:flex; flex-wrap:wrap; gap: 8px; justify-content:flex-end; }
+    .t-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      justify-content:flex-end;
+    }
 
     .t-tag{
       display: inline-block;
@@ -221,7 +219,7 @@
       line-height: 1.55;
     }
 
-    /* Expandable details */
+    /* Expandable details - small paragraphs */
     details.t-more{
       border: 1px solid var(--stroke);
       background: rgba(0,0,0,.14);
@@ -258,18 +256,17 @@
     .t-more .more-body{
       margin-top: 10px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+    .t-more .more-body p{
+      margin: 0 0 10px 0;
+    }
+    .t-more .more-body p:last-child{
+      margin-bottom: 0;
     }
 
-    .t-more ul{
-      margin: 8px 0 0 0;
-      padding-left: 18px;
-    }
-
-    /* Hidden by filter */
     .is-hidden{ display: none !important; }
 
-    /* Smoothness for long page */
     .jump{
       display:inline-block;
       margin-top: 6px;
@@ -306,40 +303,40 @@
   </p>
 
   <p class="sub">
-    Start with these two English resources, then use the filters below the videos to navigate the long timeline.
+    Start with these two English resources, then use the filters below to navigate the detailed timeline.
   </p>
 
   <!-- ================= MEDIA SECTION ================= -->
   <section class="media-block" aria-label="Intro media">
     <div class="media-grid">
 
-      <!-- PODCAST / TALK -->
+      <!-- VIDEO (short history) -->
       <article class="media-card">
-        <div class="meta">Podcast / Talk</div>
-        <h3>Undersea Exploration: Past, Present & Future</h3>
+        <div class="meta">Video</div>
+        <h3>A Short History of Underwater Exploration</h3>
         <p class="sub">
-          A long-form talk that connects technology, science and real missions. Great as an “audio-first” overview.
+          A quick chronological video covering the main milestones before you dive into the long timeline.
         </p>
         <div class="media-embed">
           <iframe
-            src="https://www.youtube.com/embed/7XxyNMoncxs"
-            title="Undersea Exploration Talk"
+            src="https://www.youtube.com/embed/SrtYPw9Jeqw"
+            title="A Short History of Underwater Exploration"
             allowfullscreen>
           </iframe>
         </div>
       </article>
 
-      <!-- VIDEO -->
+      <!-- PODCAST / TALK (long form) -->
       <article class="media-card">
-        <div class="meta">Video</div>
-        <h3>A Short History of Underwater Exploration</h3>
+        <div class="meta">Podcast / Talk</div>
+        <h3>Undersea Exploration: Past, Present & Future</h3>
         <p class="sub">
-          A quick chronological video to understand the main milestones before diving into the detailed timeline.
+          A longer talk that connects technology, science and real missions. Great as an “audio-first” overview.
         </p>
         <div class="media-embed">
           <iframe
-            src="https://www.youtube.com/embed/SrtYPw9Jeqw"
-            title="History of Underwater Exploration"
+            src="https://www.youtube.com/embed/7XxyNMoncxs"
+            title="Undersea Exploration: Past, Present & Future"
             allowfullscreen>
           </iframe>
         </div>
@@ -373,11 +370,10 @@
     </div>
   </section>
 
-  <!-- ================= TIMELINE LIST ================= -->
+  <!-- ================= TIMELINE ================= -->
   <section aria-label="Detailed timeline">
     <div class="timeline" id="timelineList">
 
-      <!-- Helper: use data-cats="tech science" etc. -->
       <article class="t-item" data-cats="foundations">
         <div class="t-card">
           <div class="t-head">
@@ -387,15 +383,10 @@
           <div class="t-title">Early breath-hold diving</div>
           <p class="t-sub">Pearl, sponge and salvage diving: humans explore with lung capacity only.</p>
           <details class="t-more">
-            <summary>
-              <span>More details</span><span class="summary-hint">Click to expand</span>
-            </summary>
+            <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>These early practices defined the first “constraints” of underwater exploration: air, cold, pressure, visibility and navigation.</p>
-              <ul>
-                <li>Tech limitation: no reliable light, no long endurance.</li>
-                <li>Operational result: near-surface exploration only.</li>
-              </ul>
+              <p>These early practices define the first hard limits of underwater exploration: air supply, cold exposure, pressure effects, poor visibility, and the lack of reliable navigation.</p>
+              <p>At this stage, “exploration” stays near the surface and remains short, risky, and highly dependent on weather and human physiology.</p>
             </div>
           </details>
         </div>
@@ -411,11 +402,12 @@
             </div>
           </div>
           <div class="t-title">Diving bell concept described</div>
-          <p class="t-sub">Trapping air underwater becomes the core idea for later life-support systems.</p>
+          <p class="t-sub">Trapping air underwater becomes a key idea for later life-support systems.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>The bell is the simplest “habitat”: it extends working time and creates a repeatable work method (salvage, construction).</p>
+              <p>The bell is one of the first “engineered” solutions to extend time underwater. Even in its simplest form, it introduces the idea that the environment can be controlled locally.</p>
+              <p>This principle reappears later in habitats, diving systems, and ultimately pressurized submersibles.</p>
             </div>
           </details>
         </div>
@@ -435,7 +427,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>Repeated underwater “work sessions” become possible, not just quick dives.</p>
+              <p>This marks the shift from occasional underwater diving to planned underwater work sessions. The bell becomes a practical tool for repeating tasks underwater.</p>
+              <p>Even though depth remains limited, the “method” of operations starts to exist: deployment, time management, and surface support.</p>
             </div>
           </details>
         </div>
@@ -452,10 +445,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Key step: oxygen supply is engineered (not “one breath”).</li>
-                <li>Result: underwater labor becomes more scalable.</li>
-              </ul>
+              <p>Air supply becomes an engineering problem rather than a human limitation. The bell can be kept usable longer, and work becomes more predictable.</p>
+              <p>This is a foundational step toward modern life-support logic: supply, safety margins, and surface logistics.</p>
             </div>
           </details>
         </div>
@@ -475,7 +466,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>Even if it’s limited, it introduces the “system problem”: buoyancy + propulsion + navigation + mission objective.</p>
+              <p>Even with limited performance, it introduces the system-level thinking of underwater vehicles: buoyancy control, propulsion, navigation, and mission execution.</p>
+              <p>It also shows how difficult underwater operation is without modern sensors, power, and reliable mechanics.</p>
             </div>
           </details>
         </div>
@@ -488,14 +480,12 @@
             <div class="t-tags"><span class="t-tag tag-tech">TECH</span></div>
           </div>
           <div class="t-title">Surface-supplied diving helmets & suits</div>
-          <p class="t-sub">From early helmets to better sealing suits → safer, deeper, longer work.</p>
+          <p class="t-sub">Better sealing and air delivery → safer, deeper, longer underwater work.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Huge benefit: air supply is controlled from the surface.</li>
-                <li>Limits remain: decompression injuries, visibility, and mobility.</li>
-              </ul>
+              <p>Surface supply removes the time constraint of a single breath and supports long working sessions for salvage and construction.</p>
+              <p>However, deeper operations remain dangerous due to decompression injuries and limited mobility, driving the need for better physiology and procedures.</p>
             </div>
           </details>
         </div>
@@ -512,7 +502,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>This is where exploration becomes structured science: systematic data, stations, methods and repeatability.</p>
+              <p>This expedition turns exploration into structured science: consistent measurements, repeated stations, and standardized methods.</p>
+              <p>It becomes a reference point for how ocean research is planned, documented, and compared across regions.</p>
             </div>
           </details>
         </div>
@@ -528,14 +519,12 @@
             </div>
           </div>
           <div class="t-title">Decompression theory formalized</div>
-          <p class="t-sub">Diving transitions from “dangerous craft” to controlled physiology + procedures.</p>
+          <p class="t-sub">Diving transitions from dangerous craft to controlled physiology + procedures.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Key idea: staged ascent reduces decompression sickness risk.</li>
-                <li>Impact: deeper / longer diving becomes more feasible.</li>
-              </ul>
+              <p>Ascent is no longer improvised: it becomes staged and planned to reduce decompression sickness.</p>
+              <p>This safety improvement unlocks deeper and longer dives, and makes professional underwater work much more scalable.</p>
             </div>
           </details>
         </div>
@@ -550,16 +539,13 @@
               <span class="t-tag tag-tech">TECH</span>
             </div>
           </div>
-          <div class="t-title">World wars accelerate sonar & integration</div>
+          <div class="t-title">World wars accelerate sonar & systems integration</div>
           <p class="t-sub">Underwater detection and navigation evolve rapidly: acoustics becomes central.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>War pushes system engineering: sensors, power, electronics, procedures, training — and reliability at scale.</p>
-              <ul>
-                <li>Sonar and hydrophones become mainstream.</li>
-                <li>Navigation, communication and manufacturing improve fast.</li>
-              </ul>
+              <p>Conflict pushes rapid advances in sensors, electronics, power, training, and reliability. Sonar becomes a core way to “see” underwater when light cannot.</p>
+              <p>After the wars, these technologies spread to civilian science and offshore operations, accelerating deep-sea exploration.</p>
             </div>
           </details>
         </div>
@@ -575,34 +561,12 @@
             </div>
           </div>
           <div class="t-title">SCUBA popularization</div>
-          <p class="t-sub">Self-contained diving scales access to reefs, coasts and shallow research.</p>
+          <p class="t-sub">Self-contained diving scales access to shallow research and coastal exploration.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>SCUBA democratizes underwater presence. Still, deep exploration requires pressure vehicles or robotics.</p>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <article class="t-item" data-cats="science tech">
-        <div class="t-card">
-          <div class="t-head">
-            <div class="t-date">1930–1934</div>
-            <div class="t-tags">
-              <span class="t-tag tag-science">SCIENCE</span>
-              <span class="t-tag tag-tech">TECH</span>
-            </div>
-          </div>
-          <div class="t-title">Bathysphere deep dives</div>
-          <p class="t-sub">Pressure sphere enables early deep observation (beyond diver limits).</p>
-          <details class="t-more">
-            <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
-            <div class="more-body">
-              <ul>
-                <li>Core shift: protect humans from pressure rather than “adapt humans”.</li>
-                <li>New constraints: lighting, windows, life support, tether handling.</li>
-              </ul>
+              <p>SCUBA makes underwater observation far more accessible for training, photography, archaeology, and marine biology in shallow waters.</p>
+              <p>For deep exploration, pressure vehicles and robotics remain essential, but SCUBA expands the culture and workforce of underwater activities.</p>
             </div>
           </details>
         </div>
@@ -622,11 +586,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>This proves full-depth exploration is possible, but it’s still a “record mission” — not yet routine.</p>
-              <ul>
-                <li>Engineering focus: pressure hull, buoyancy materials, safety margins.</li>
-                <li>Scientific payoff: observation at extreme depth.</li>
-              </ul>
+              <p>This dive proves full-depth access is possible, but it remains a “record mission” rather than routine exploration.</p>
+              <p>It pushes pressure engineering, safety margins and materials, and becomes a milestone for deep-ocean ambition.</p>
             </div>
           </details>
         </div>
@@ -646,11 +607,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>Big shift: from one-off dives to mission workflows (planning → descent → work → return → analysis).</p>
-              <ul>
-                <li>Tooling: manipulators, sample storage, navigation procedures.</li>
-                <li>Impact: enables discoveries like hydrothermal vents.</li>
-              </ul>
+              <p>The key change is operational: deep dives become regular missions with workflows, tools, and scientific objectives.</p>
+              <p>With repeatability comes discovery, because researchers can revisit sites, refine hypotheses, and collect high-quality samples.</p>
             </div>
           </details>
         </div>
@@ -670,10 +628,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Key advantage: depth becomes a design constraint, not a human limit.</li>
-                <li>Industrial push: reliability, tooling, cameras, thrusters, tethers.</li>
-              </ul>
+              <p>ROVs allow work at depths that are unsafe or impossible for divers, with cameras and manipulators controlled from the surface.</p>
+              <p>Industry demand forces the technology to become robust, serviceable, and effective in harsh conditions, which also benefits science.</p>
             </div>
           </details>
         </div>
@@ -686,11 +642,12 @@
             <div class="t-tags"><span class="t-tag tag-science">SCIENCE</span></div>
           </div>
           <div class="t-title">Hydrothermal vents discovered</div>
-          <p class="t-sub">A major discovery: ecosystems powered by chemistry, not sunlight.</p>
+          <p class="t-sub">Ecosystems powered by chemistry, not sunlight, are revealed in the deep sea.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>This changes biology and geology: exploration reveals unknown energy chains and processes.</p>
+              <p>This discovery transforms marine biology and geology by proving life can thrive without photosynthesis, driven instead by chemical energy.</p>
+              <p>It also increases the need for precise sampling tools, imaging, and navigation to study fragile deep-sea environments.</p>
             </div>
           </details>
         </div>
@@ -710,30 +667,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Navigation improvements (INS/DVL) enable better localization without GPS.</li>
-                <li>New workflow: plan → autonomous survey → post-process → iterate.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </article>
-
-      <article class="t-item" data-cats="science tech">
-        <div class="t-card">
-          <div class="t-head">
-            <div class="t-date">1985</div>
-            <div class="t-tags">
-              <span class="t-tag tag-science">SCIENCE</span>
-              <span class="t-tag tag-tech">TECH</span>
-            </div>
-          </div>
-          <div class="t-title">Titanic wreck found</div>
-          <p class="t-sub">Deep search and imaging demonstrate precision navigation + long campaigns.</p>
-          <details class="t-more">
-            <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
-            <div class="more-body">
-              <p>Iconic demonstration of deep search operations: systematic grid search, sonar + imaging confirmation.</p>
+              <p>AUVs reduce the cost of repeated surveys and can cover large areas systematically, following planned tracks with high precision.</p>
+              <p>As navigation improves, the same location can be revisited for monitoring, which is essential for environmental science and seabed mapping.</p>
             </div>
           </details>
         </div>
@@ -753,10 +688,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Modern materials and sensors improve data capture.</li>
-                <li>High visibility increases public interest in deep exploration.</li>
-              </ul>
+              <p>Modern sensors and cameras improve the amount of usable scientific data captured during deep dives.</p>
+              <p>It also renews public attention for deep-ocean exploration, reinforcing momentum for future missions and programs.</p>
             </div>
           </details>
         </div>
@@ -776,11 +709,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>Mapping is not just “pretty maps”: it supports navigation safety, climate models, resource management and biodiversity research.</p>
-              <ul>
-                <li>Challenges: coverage, standards, data sharing.</li>
-                <li>Tools: multibeam sonar + AUV/ROV mapping where needed.</li>
-              </ul>
+              <p>Seafloor maps support navigation safety, climate and circulation models, biodiversity studies, and many kinds of risk management.</p>
+              <p>The biggest challenges are scale, standardization and data sharing—so the project is as much organizational as it is technological.</p>
             </div>
           </details>
         </div>
@@ -800,7 +730,8 @@
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <p>The focus is coordination: shared infrastructure, open data, long-term monitoring and real-world impact.</p>
+              <p>The Ocean Decade helps coordinate research programs, data infrastructure and real-world applications across countries.</p>
+              <p>It encourages long-term observation and encourages the link between exploration, decision-making and societal impact.</p>
             </div>
           </details>
         </div>
@@ -816,15 +747,12 @@
             </div>
           </div>
           <div class="t-title">AI-assisted autonomy & onboard perception</div>
-          <p class="t-sub">Smarter planning, detection and energy management extend mission capability.</p>
+          <p class="t-sub">Smarter planning and onboard processing extend mission capability.</p>
           <details class="t-more">
             <summary><span>More details</span><span class="summary-hint">Click to expand</span></summary>
             <div class="more-body">
-              <ul>
-                <li>Better object detection and terrain following.</li>
-                <li>Adaptive mission planning to save energy and maximize coverage.</li>
-                <li>Faster “survey → insight” cycles thanks to onboard compute.</li>
-              </ul>
+              <p>Onboard perception allows vehicles to react to terrain, detect objects of interest, and optimize routes based on energy constraints.</p>
+              <p>This reduces the “survey → insight” cycle time and makes exploration more adaptive, especially in complex deep environments.</p>
             </div>
           </details>
         </div>
@@ -832,7 +760,6 @@
 
     </div>
   </section>
-
 </main>
 
 <footer class="footer">
@@ -841,7 +768,6 @@
 
 <script src="../script.js"></script>
 
-<!-- Page-only JS for filters + expand/collapse (articles.html only) -->
 <script>
   (function(){
     const chips = Array.from(document.querySelectorAll('.chip[data-filter]'));
@@ -885,7 +811,6 @@
       document.querySelectorAll('details.t-more').forEach(d => d.open = false);
     });
 
-    // init
     applyFilter('all');
   })();
 </script>
