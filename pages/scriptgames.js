@@ -46,7 +46,7 @@ function checkHistoryQuiz() {
     for (let i = 1; i <= totalQuestions; i++) {
         // Récupérer la réponse sélectionnée pour chaque question
         const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
-        
+
         // Vérifier si l'utilisateur a répondu à la question
         if (selectedAnswer) {
             if (selectedAnswer.value === correctAnswers[`q${i}`]) {
@@ -56,7 +56,7 @@ function checkHistoryQuiz() {
     }
 
     // Afficher le résultat dans la page HTML
-    const resultDiv = document.getElementById("quizResult");
+    const resultDiv = document.getElementById("quizResultHistory"); // Résultat spécifique pour History Quiz
     resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}!`;
 
     // Message d'encouragement selon le score
