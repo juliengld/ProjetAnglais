@@ -14,6 +14,7 @@
       <div class="logo"></div>
       <a href="../index.html">Ocean Exploration</a>
     </div>
+
     <nav>
       <a href="./technology.html">Technology</a>
       <a href="./articles.html">History</a>
@@ -31,21 +32,29 @@
     climate knowledge, safety, and responsible innovation.
   </p>
 
-  <!-- ===== PDF SECTION (fixed path) ===== -->
+  <!-- ===== PDF (DOWNLOAD LINK) ===== -->
   <section style="margin-top: 1.25rem;">
     <article class="card">
-      <h3>Course PDF — Key Reasons to Explore the Ocean</h3>
+      <h3>Download — Reasons for Ocean Exploration (PDF)</h3>
       <p class="meta">
-        This is the only PDF we want on this page: <strong>projet_anglais_reasons.pdf</strong>
+        Official document: <strong>projet_anglais_reasons.pdf</strong>
       </p>
-      <p>
-        <a class="btn" href="../PDFs/projet_anglais_reasons.pdf" target="_blank" rel="noopener">
-          Open the PDF
+
+      <div style="display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.75rem;">
+        <!-- Download (reliable on GitHub Pages) -->
+        <a class="btn" href="./PDFs/projet_anglais_reasons.pdf" download>
+          Download the PDF
         </a>
-      </p>
-      <p class="meta" style="margin-top:.75rem;">
-        If you still get a 404 after this change, it usually means the folder name on GitHub is not exactly
-        <code>PDFs</code> (case-sensitive). In your provided structure, it is <code>PDFs/</code>.
+
+        <!-- Optional: open in a new tab -->
+        <a class="btn" href="./PDFs/projet_anglais_reasons.pdf" target="_blank" rel="noopener">
+          Open in a new tab
+        </a>
+      </div>
+
+      <p class="meta" style="margin-top:.9rem;">
+        Path used: <code>pages/PDFs/projet_anglais_reasons.pdf</code> → from this file, the correct relative link is
+        <code>./PDFs/projet_anglais_reasons.pdf</code>.
       </p>
     </article>
   </section>
@@ -54,7 +63,7 @@
   <section style="margin-top: 1.75rem;">
     <article class="card">
       <h2 style="margin-top:0;">Why Deep-Sea Exploration Matters</h2>
-      <p class="meta">A clear, practical overview — science, climate, risks, and innovation.</p>
+      <p class="meta">Science, climate, safety, and innovation — the core reasons.</p>
 
       <p>
         When people think about exploration, they often imagine space. But the ocean is just as unknown:
@@ -65,70 +74,62 @@
 
       <h3>1) The ocean regulates Earth’s climate</h3>
       <p>
-        The ocean stores a huge amount of heat and carbon. It influences weather, storms, and long-term
-        climate patterns. If we want climate predictions to be accurate, we need better measurements of
-        currents, temperature, chemistry, and how deep ecosystems react to change. Deep-ocean data is
-        especially valuable because it can reveal slow processes that surface observations miss.
+        The ocean stores huge amounts of heat and carbon and shapes weather and long-term climate patterns.
+        Better measurements of currents, temperature, chemistry, and deep-ocean processes improve climate
+        models and help us understand how fast changes can propagate.
       </p>
 
       <h3>2) Biodiversity: discovering life we didn’t know existed</h3>
       <p>
-        Deep-sea habitats (hydrothermal vents, cold seeps, abyssal plains, seamounts) host organisms with
-        unusual survival strategies. Many species remain undescribed. Studying them helps us understand
-        evolution, adaptation to extreme environments, and the web of life that supports larger marine
-        ecosystems. It can also inspire new materials and technologies (biomimicry).
+        Hydrothermal vents, cold seeps, abyssal plains, and seamounts host organisms adapted to extreme
+        conditions. Many species remain undescribed. Understanding these ecosystems helps science, supports
+        conservation, and can inspire new technologies (biomimicry).
       </p>
 
-      <h3>3) Natural hazards and safety</h3>
+      <h3>3) Natural hazards and critical infrastructure</h3>
       <p>
-        The seafloor is not static. Submarine landslides, earthquakes, and volcanic activity can trigger
-        tsunamis and damage underwater cables that carry global internet traffic. Mapping and monitoring
-        the ocean floor helps evaluate risks, protect infrastructures, and improve early-warning systems.
+        Earthquakes, underwater landslides, and volcanic activity can trigger tsunamis and damage submarine
+        cables that carry global communications. Mapping the seafloor and monitoring key zones improves risk
+        evaluation and helps protect critical infrastructure.
       </p>
 
-      <h3>4) Resources, but with responsibility</h3>
+      <h3>4) Resources — with responsibility</h3>
       <p>
-        The ocean contains resources (minerals, energy potential, biological molecules) that can be useful,
-        but exploration must come with strict responsibility. The deep sea is fragile: disturbances can last
-        decades or longer. Exploration is therefore also about learning enough to make informed choices:
-        what can be done, what should be avoided, and how to protect ecosystems before they are harmed.
+        The ocean contains resources and scientific opportunities, but deep-sea environments are fragile.
+        Exploration is also about collecting enough evidence to make responsible decisions: what should be
+        protected, what can be developed, and under which conditions.
       </p>
 
-      <h3>5) Innovation: robotics and sensing</h3>
+      <h3>5) Innovation driven by robotics</h3>
       <p>
-        Deep-sea exploration pushes technology: pressure-resistant systems, autonomous navigation, imaging
-        in low light, acoustic communications, low-power electronics, and robust materials. These innovations
-        often benefit other domains too — medical devices, industrial inspection, disaster response, and
-        environmental monitoring.
-      </p>
-
-      <h3>6) A shared heritage and a global challenge</h3>
-      <p>
-        Finally, ocean exploration is a story of international collaboration. No single country can map,
-        monitor, and protect the ocean alone. Sharing data and results supports global science, education,
-        and policy decisions. The ocean connects everyone — so understanding it is in everyone’s interest.
+        Deep-sea exploration pushes technology: pressure-resistant systems, autonomy, acoustic communications,
+        low-power electronics, advanced sensing, and robust materials. These innovations often benefit other
+        sectors too (inspection, rescue, environmental monitoring).
       </p>
 
       <hr style="opacity:.18; margin: 1.25rem 0;" />
 
       <p class="meta" style="margin:0;">
-        Want a shorter summary? Open the PDF above and compare it with the key ideas from this page.
+        You can cross-check these ideas with the PDF above: it’s your reference document for this page.
       </p>
     </article>
   </section>
 
-  <!-- ===== VIDEOS ===== -->
+  <!-- ===== VIDEOS (REPLACED WITH #3 AND #5) ===== -->
   <section style="margin-top: 1.75rem;">
     <div class="grid cols-2">
-      <article class="card">
-        <h3>Video 1 — Ocean Exploration (NOAA)</h3>
-        <p class="meta">A solid introduction to the goals and tools of exploration.</p>
 
-        <!-- Responsive iframe without needing CSS changes -->
-        <div style="position:relative; padding-top:56.25%; border-radius: 16px; overflow:hidden;">
+      <!-- VIDEO 3 -->
+      <article class="card">
+        <h3>Why The Deep Ocean Matters</h3>
+        <p class="meta">
+          A scientific perspective on why the deep ocean is essential for climate, ecosystems, and progress.
+        </p>
+
+        <div style="position:relative; padding-top:56.25%; border-radius:16px; overflow:hidden;">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/3bY0UqY8o7o"
-            title="NOAA Ocean Exploration"
+            src="https://www.youtube-nocookie.com/embed/kVecBUzvPFQ"
+            title="Why The Deep Ocean Matters"
             style="position:absolute; inset:0; width:100%; height:100%; border:0;"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -136,20 +137,25 @@
         </div>
 
         <p style="margin-top:.85rem;">
-          <a class="btn" href="https://www.youtube.com/watch?v=3bY0UqY8o7o" target="_blank" rel="noopener">
+          <a class="btn"
+             href="https://www.youtube.com/watch?v=kVecBUzvPFQ"
+             target="_blank" rel="noopener">
             Watch on YouTube
           </a>
         </p>
       </article>
 
+      <!-- VIDEO 5 -->
       <article class="card">
-        <h3>Video 2 — ROVs & Deep Sea Research</h3>
-        <p class="meta">How robots help us observe fragile ecosystems safely.</p>
+        <h3>Ocean Watch — A Tale of Deep Sea Exploration</h3>
+        <p class="meta">
+          A visual journey into deep-sea exploration, highlighting discovery, mystery, and the unknown.
+        </p>
 
-        <div style="position:relative; padding-top:56.25%; border-radius: 16px; overflow:hidden;">
+        <div style="position:relative; padding-top:56.25%; border-radius:16px; overflow:hidden;">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/0oJb2nZQ2Yc"
-            title="ROVs and Deep Sea Exploration"
+            src="https://www.youtube-nocookie.com/embed/Uh3fNYVwDXM"
+            title="Ocean Watch — A Tale of Deep Sea Exploration"
             style="position:absolute; inset:0; width:100%; height:100%; border:0;"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -157,18 +163,17 @@
         </div>
 
         <p style="margin-top:.85rem;">
-          <a class="btn" href="https://www.youtube.com/watch?v=0oJb2nZQ2Yc" target="_blank" rel="noopener">
+          <a class="btn"
+             href="https://www.youtube.com/watch?v=Uh3fNYVwDXM"
+             target="_blank" rel="noopener">
             Watch on YouTube
           </a>
         </p>
       </article>
+
     </div>
-
-    <p class="meta" style="margin-top: .85rem;">
-      If you prefer, I can swap the videos for ones that match your exact theme (deep-sea mapping, climate,
-      biodiversity, geopolitics, etc.).
-    </p>
   </section>
+
 </main>
 
 <footer class="footer">
