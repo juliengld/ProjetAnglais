@@ -6,10 +6,14 @@
   <title>Why Explore ? — Ocean Exploration</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
+
 <body>
 <header>
   <div class="wrap nav">
-    <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
+    <div class="brand">
+      <div class="logo"></div>
+      <a href="../index.html">Ocean Exploration</a>
+    </div>
     <nav>
       <a href="./technology.html">Technology</a>
       <a href="./articles.html">History</a>
@@ -22,36 +26,155 @@
 
 <main class="wrap">
   <h1>Why Explore ?</h1>
-  <p class="sub">Learn by playing: quizzes, small simulations, and key resources.</p>
+  <p class="sub">
+    The deep ocean is still one of Earth’s least explored frontiers. Understanding it is essential for science,
+    climate knowledge, safety, and responsible innovation.
+  </p>
 
-  <div class="grid cols-2">
+  <!-- ===== PDF SECTION (fixed path) ===== -->
+  <section style="margin-top: 1.25rem;">
     <article class="card">
-      <h3>Quiz: Ocean Zones</h3>
-      <p class="meta">10 questions • instant feedback</p>
-      <p><a class="btn" href="#">Start quiz</a></p>
-    </article>
-
-    <article class="card">
-      <h3>ROV Pilot</h3>
-      <p class="meta">Keyboard arrows mini‑game (prototype)</p>
-      <p><a class="btn green" href="#">Play demo</a></p>
-    </article>
-  </div>
-
-  <section style="margin-top: 2.25rem;">
-    <article class="card">
-      <h3>Why Deep‑Sea Exploration Matters (PDF)</h3>
-      <p class="meta">A short article to understand the big reasons: science, climate, hazards, resources, and innovation.</p>
+      <h3>Course PDF — Key Reasons to Explore the Ocean</h3>
+      <p class="meta">
+        This is the only PDF we want on this page: <strong>projet_anglais_reasons.pdf</strong>
+      </p>
       <p>
-        <a class="btn" href="../PDFS/projet_anglais_reasons.pdf" target="_blank" rel="noopener">
-          Read the PDF
+        <a class="btn" href="../PDFs/projet_anglais_reasons.pdf" target="_blank" rel="noopener">
+          Open the PDF
         </a>
+      </p>
+      <p class="meta" style="margin-top:.75rem;">
+        If you still get a 404 after this change, it usually means the folder name on GitHub is not exactly
+        <code>PDFs</code> (case-sensitive). In your provided structure, it is <code>PDFs/</code>.
       </p>
     </article>
   </section>
+
+  <!-- ===== ARTICLE ===== -->
+  <section style="margin-top: 1.75rem;">
+    <article class="card">
+      <h2 style="margin-top:0;">Why Deep-Sea Exploration Matters</h2>
+      <p class="meta">A clear, practical overview — science, climate, risks, and innovation.</p>
+
+      <p>
+        When people think about exploration, they often imagine space. But the ocean is just as unknown:
+        vast areas of the deep sea remain poorly mapped and rarely observed. Exploring the ocean is not
+        only about curiosity — it directly affects how we understand Earth, how we protect people, and how
+        we make decisions about technology and resources.
+      </p>
+
+      <h3>1) The ocean regulates Earth’s climate</h3>
+      <p>
+        The ocean stores a huge amount of heat and carbon. It influences weather, storms, and long-term
+        climate patterns. If we want climate predictions to be accurate, we need better measurements of
+        currents, temperature, chemistry, and how deep ecosystems react to change. Deep-ocean data is
+        especially valuable because it can reveal slow processes that surface observations miss.
+      </p>
+
+      <h3>2) Biodiversity: discovering life we didn’t know existed</h3>
+      <p>
+        Deep-sea habitats (hydrothermal vents, cold seeps, abyssal plains, seamounts) host organisms with
+        unusual survival strategies. Many species remain undescribed. Studying them helps us understand
+        evolution, adaptation to extreme environments, and the web of life that supports larger marine
+        ecosystems. It can also inspire new materials and technologies (biomimicry).
+      </p>
+
+      <h3>3) Natural hazards and safety</h3>
+      <p>
+        The seafloor is not static. Submarine landslides, earthquakes, and volcanic activity can trigger
+        tsunamis and damage underwater cables that carry global internet traffic. Mapping and monitoring
+        the ocean floor helps evaluate risks, protect infrastructures, and improve early-warning systems.
+      </p>
+
+      <h3>4) Resources, but with responsibility</h3>
+      <p>
+        The ocean contains resources (minerals, energy potential, biological molecules) that can be useful,
+        but exploration must come with strict responsibility. The deep sea is fragile: disturbances can last
+        decades or longer. Exploration is therefore also about learning enough to make informed choices:
+        what can be done, what should be avoided, and how to protect ecosystems before they are harmed.
+      </p>
+
+      <h3>5) Innovation: robotics and sensing</h3>
+      <p>
+        Deep-sea exploration pushes technology: pressure-resistant systems, autonomous navigation, imaging
+        in low light, acoustic communications, low-power electronics, and robust materials. These innovations
+        often benefit other domains too — medical devices, industrial inspection, disaster response, and
+        environmental monitoring.
+      </p>
+
+      <h3>6) A shared heritage and a global challenge</h3>
+      <p>
+        Finally, ocean exploration is a story of international collaboration. No single country can map,
+        monitor, and protect the ocean alone. Sharing data and results supports global science, education,
+        and policy decisions. The ocean connects everyone — so understanding it is in everyone’s interest.
+      </p>
+
+      <hr style="opacity:.18; margin: 1.25rem 0;" />
+
+      <p class="meta" style="margin:0;">
+        Want a shorter summary? Open the PDF above and compare it with the key ideas from this page.
+      </p>
+    </article>
+  </section>
+
+  <!-- ===== VIDEOS ===== -->
+  <section style="margin-top: 1.75rem;">
+    <div class="grid cols-2">
+      <article class="card">
+        <h3>Video 1 — Ocean Exploration (NOAA)</h3>
+        <p class="meta">A solid introduction to the goals and tools of exploration.</p>
+
+        <!-- Responsive iframe without needing CSS changes -->
+        <div style="position:relative; padding-top:56.25%; border-radius: 16px; overflow:hidden;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/3bY0UqY8o7o"
+            title="NOAA Ocean Exploration"
+            style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p style="margin-top:.85rem;">
+          <a class="btn" href="https://www.youtube.com/watch?v=3bY0UqY8o7o" target="_blank" rel="noopener">
+            Watch on YouTube
+          </a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Video 2 — ROVs & Deep Sea Research</h3>
+        <p class="meta">How robots help us observe fragile ecosystems safely.</p>
+
+        <div style="position:relative; padding-top:56.25%; border-radius: 16px; overflow:hidden;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/0oJb2nZQ2Yc"
+            title="ROVs and Deep Sea Exploration"
+            style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p style="margin-top:.85rem;">
+          <a class="btn" href="https://www.youtube.com/watch?v=0oJb2nZQ2Yc" target="_blank" rel="noopener">
+            Watch on YouTube
+          </a>
+        </p>
+      </article>
+    </div>
+
+    <p class="meta" style="margin-top: .85rem;">
+      If you prefer, I can swap the videos for ones that match your exact theme (deep-sea mapping, climate,
+      biodiversity, geopolitics, etc.).
+    </p>
+  </section>
 </main>
 
-<footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
+<footer class="footer">
+  <div class="wrap">© <span id="year"></span> Ocean Exploration</div>
+</footer>
+
 <script src="../script.js"></script>
 </body>
 </html>
