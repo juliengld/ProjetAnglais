@@ -3,7 +3,7 @@ function checkAboutUsQuiz() {
     const correctAnswer = "Thibaut Dani";
 
     let score = 0;
-    const totalQuestions = 3; // Nombre total de questions
+    const totalQuestions = 4; // Nombre total de questions
 
     // Vérifier les réponses de chaque question
     for (let i = 1; i <= totalQuestions; i++) {
