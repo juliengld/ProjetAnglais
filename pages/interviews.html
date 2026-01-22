@@ -22,12 +22,12 @@
 
     /* Make the video vignette smaller than full width */
     .video-wrap{
-      max-width: 720px;   /* adjust to taste: 640 / 720 / 800 */
+      max-width: 720px;
     }
 
     .video-title{
       margin: 0 0 6px;
-      font-weight: 800;   /* bold title */
+      font-weight: 800;
       letter-spacing: 0.2px;
     }
 
@@ -105,6 +105,76 @@
       color: var(--muted);
       background: rgba(255,255,255,0.02);
     }
+
+    /* Divider */
+    .divider{
+      height: 1px;
+      background: var(--stroke);
+      margin: 22px 0;
+      opacity: 0.9;
+    }
+
+    /* PDFs section */
+    .pdfs-head{
+      max-width: 80ch;
+      margin: 0 0 14px;
+    }
+
+    .pdf-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .pdf-card{
+      padding: 16px;
+    }
+
+    .pdf-title{
+      margin: 0 0 8px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .pdf-summary{
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.98rem;
+      max-width: 80ch;
+    }
+
+    .pdf-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.02);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .pdf-link:hover{
+      background: rgba(255,255,255,0.05);
+    }
+
+    .pdf-link svg{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      opacity: 0.95;
+    }
+
+    .pdf-note{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 80ch;
+    }
   </style>
 </head>
 
@@ -125,15 +195,14 @@
 <main class="wrap">
   <h1>Geopolitics</h1>
 
-  <!-- NEW: global intro paragraph on major geopolitical issues -->
+  <!-- Global intro paragraph on major geopolitical issues -->
   <p class="sub">
     Underwater exploration is no longer only about science: it has become a strategic field where states and industries
     compete for <strong>knowledge</strong>, <strong>resources</strong>, and <strong>influence</strong>.
     High-resolution seabed mapping, access to extreme depths, and advanced robotics can translate into a long-term advantage:
-    they support claims and negotiations, secure critical supply chains (metals needed for technology and energy transition),
-    and shape the rules for what can be done in international waters. At the same time, this competition raises major
-    questions about <strong>governance</strong>, <strong>environmental protection</strong>, and <strong>who controls data</strong>
-    about the deep ocean.
+    they support negotiations, secure critical supply chains, and shape the rules for what can be done in international waters.
+    At the same time, this competition raises major questions about <strong>governance</strong>, <strong>environmental protection</strong>,
+    and <strong>who controls deep-ocean data</strong>.
   </p>
 
   <p class="sub">
@@ -239,6 +308,72 @@
     </article>
 
   </section>
+
+  <!-- NEW: PDFs section -->
+  <div class="divider"></div>
+
+  <section aria-label="PDF downloads">
+    <h2>PDFs to download</h2>
+    <p class="pdfs-head">
+      These documents provide concrete national examples of how deep-sea resources and exploration can trigger political choices,
+      regulatory debates, and international tensions.
+    </p>
+
+    <div class="pdf-grid">
+      <!-- PDF 1: Norway -->
+      <article class="card pdf-card">
+        <h3 class="pdf-title">Norway — Deep-sea mining halted until 2029</h3>
+        <p class="pdf-summary">
+          Norway postpones the issuance of deep-sea mining licenses in the Arctic until the end of the current legislative term (2029),
+          following political negotiations and mounting environmental concerns about irreversible biodiversity impacts.
+        </p>
+        <a class="pdf-link" href="./PDFs/Deep_Sea_Mining_Norway.pdf" target="_blank" rel="noopener" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1z"/>
+            <path fill="currentColor" d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+          </svg>
+          Open / Download PDF
+        </a>
+      </article>
+
+      <!-- PDF 2: Canada / US -->
+      <article class="card pdf-card">
+        <h3 class="pdf-title">Canada / U.S. — Permits accelerated in international waters</h3>
+        <p class="pdf-summary">
+          The document describes a push to speed up deep-sea mining permits and trigger a resource scramble before global standards are set,
+          framed around critical minerals and strategic competition over supply chains.
+        </p>
+        <a class="pdf-link" href="./PDFs/Deep_Sea_Mining_Canada.pdf" target="_blank" rel="noopener" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1z"/>
+            <path fill="currentColor" d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+          </svg>
+          Open / Download PDF
+        </a>
+      </article>
+
+      <!-- PDF 3: Morocco -->
+      <article class="card pdf-card">
+        <h3 class="pdf-title">Morocco — Tropic Seamount and strategic minerals</h3>
+        <p class="pdf-summary">
+          This article presents the Tropic Seamount discovery and its large concentrations of strategic minerals (including phosphate and rare metals),
+          while highlighting technical costs, environmental concerns, and geopolitical uncertainty linked to disputed maritime areas.
+        </p>
+        <a class="pdf-link" href="./PDFs/Deep_Sea_Mining_Morocco.pdf" target="_blank" rel="noopener" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1z"/>
+            <path fill="currentColor" d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+          </svg>
+          Open / Download PDF
+        </a>
+      </article>
+    </div>
+
+    <p class="pdf-note">
+      If a PDF does not open, make sure the files are located at <strong>pages/PDFs/</strong> and the filenames match exactly.
+    </p>
+  </section>
+
 </main>
 
 <footer class="footer">
