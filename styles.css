@@ -355,4 +355,10 @@ h2 {
     max-width: none; /* Pas de limite de largeur pour la grille */
 }
 
+/* Case vide */
+.crossword-grid .cell.empty {
+    background-color: #000; /* Noir pour les cases vides */
+    border: none;
+}
+
 
