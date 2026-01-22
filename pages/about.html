@@ -20,9 +20,46 @@
 </header>
 
 <main class="wrap">
-    <h1>About Us</h1>
-    <p class="sub">State your mission and team. Replace content below.</p>
-    <div class="card"><p>Team bio, partners, contact details. Add logos if needed.</p></div>
+    <h1>About Us Quiz</h1>
+    <p>Test your knowledge about the team!</p>
+
+    <!-- Question 1 -->
+    <div class="question">
+        <p>1. Who is the smartest?</p>
+        <select id="q1">
+            <option value="Julien Gaillard">Julien Gaillard</option>
+            <option value="George Nuttal">George Nuttal</option>
+            <option value="Thibaut Dani">Thibaut Dani</option>
+            <option value="Walid Mahrazi">Walid Mahrazi</option>
+        </select>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <p>2. Who is the best at coding?</p>
+        <select id="q2">
+            <option value="Julien Gaillard">Julien Gaillard</option>
+            <option value="George Nuttal">George Nuttal</option>
+            <option value="Thibaut Dani">Thibaut Dani</option>
+            <option value="Walid Mahrazi">Walid Mahrazi</option>
+        </select>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <p>3. Who is the most creative?</p>
+        <select id="q3">
+            <option value="Julien Gaillard">Julien Gaillard</option>
+            <option value="George Nuttal">George Nuttal</option>
+            <option value="Thibaut Dani">Thibaut Dani</option>
+            <option value="Walid Mahrazi">Walid Mahrazi</option>
+        </select>
+    </div>
+
+    <!-- Submit and result -->
+    <button onclick="checkAboutUsQuiz()">Submit</button>
+    <div id="quizResult"></div>
+</main>
 
        <!-- 🔹 Mots croisés interactifs -->
     <section class="crossword">
@@ -236,7 +273,7 @@
 
     <section class="quiz-section">
     <h2>HISTORY Quiz</h2>
-    <p>Test your knowledge based on the underwater exploration timeline.</p>
+    <p class="sub">Test your knowledge based on the underwater exploration timeline.</p>
 
     <!-- Question 1 -->
     <div class="question">
