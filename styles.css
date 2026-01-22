@@ -343,3 +343,16 @@ h2 {
   font-size: 0.95rem;
 }
 
+/* Grille des mots croisés */
+.crossword-grid {
+    display: grid;
+    grid-template-columns: repeat(11, 50px); /* 11 colonnes de 50px */
+    grid-template-rows: repeat(14, 50px); /* 14 lignes de 50px */
+    gap: 5px; /* Espacement entre les cases */
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%; /* Assure-toi que la grille occupe toute la largeur disponible */
+    max-width: none; /* Pas de limite de largeur pour la grille */
+}
+
+
