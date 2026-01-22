@@ -14,9 +14,16 @@
   .tech-specs li { margin-bottom: 0.8rem; padding-left: 1.2rem; border-left: 3px solid #0077cc; }
   .tech-img { width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 0.5rem; }
   .caption { display: block; text-align: center; font-size: 0.9rem; color: #666; font-style: italic; }
+
+  /* Optional: nicer video cards */
+  .video-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; }
+  .video-embed { width: 100%; height: 315px; border: 0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
   
   /* Responsive: Stack columns on mobile */
-  @media (max-width: 768px) { .tech-layout { grid-template-columns: 1fr; } }
+  @media (max-width: 768px) { 
+    .tech-layout { grid-template-columns: 1fr; } 
+    .video-embed { height: 240px; }
+  }
 </style>
 </head>
 <body>
@@ -63,6 +70,44 @@
       <p><a class="btn alt" href="#sub-section">View Specs</a></p>
     </article>
   </div>
+
+  <!-- ✅ Added videos directly after the robot presentation -->
+  <section class="video-section">
+    <h2>Underwater Exploration Robots — Videos</h2>
+    <p class="lead">Two short English documentaries showing how underwater robots explore environments too deep or dangerous for humans.</p>
+
+    <div class="tech-layout" style="margin-top: 2rem;">
+      <div class="text-col">
+        <h3>Robots Explore the Deep Ocean</h3>
+        <p>An accessible introduction explaining why and how robotic systems are used to explore the deep sea, from mapping the seafloor to observing marine life.</p>
+      </div>
+      <div class="img-col">
+        <iframe
+          class="video-embed"
+          src="https://www.youtube.com/embed/3OwHatqXbek"
+          title="Robots Explore the Deep Ocean"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="tech-layout" style="margin-top: 3rem;">
+      <div class="text-col">
+        <h3>Robots of the Deep</h3>
+        <p>This video focuses on real scientific missions, showing how ROVs and AUVs are designed, deployed, and operated during oceanographic expeditions.</p>
+      </div>
+      <div class="img-col">
+        <iframe
+          class="video-embed"
+          src="https://www.youtube.com/embed/0Nsv2neg5-Q"
+          title="Robots of the Deep"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
 </main>
 
 <section id="auv-section" class="tech-details">
