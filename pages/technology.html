@@ -8,20 +8,47 @@
 <style>
   /* Extra styles for the Tech Details section */
   .tech-details { padding: 4rem 0; border-top: 1px solid #eee; }
-  
+
   .tech-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2rem; }
-  .tech-specs ul { list-style: none; padding: 0; }
+
+  /* ✅ Fix: your UL has class="tech-specs", so style the UL directly */
+  .tech-specs { list-style: none; padding: 0; margin: 0; }
   .tech-specs li { margin-bottom: 0.8rem; padding-left: 1.2rem; border-left: 3px solid #0077cc; }
+
   .tech-img { width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 0.5rem; }
   .caption { display: block; text-align: center; font-size: 0.9rem; color: #666; font-style: italic; }
 
-  /* Optional: nicer video cards */
+  /* Video section styling */
   .video-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; }
   .video-embed { width: 100%; height: 315px; border: 0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-  
+
+  /* Citations (footnote-style links) */
+  .cite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    line-height: 1;
+    padding: 0.15rem 0.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin-left: 0.35rem;
+    transform: translateY(-1px);
+  }
+  .cite:hover { border-color: rgba(0,0,0,0.35); }
+
+  .refs { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #ccc; }
+  .refs ol { padding-left: 1.2rem; }
+  .refs li { margin-bottom: 0.8rem; color: #444; }
+  .refs .ref-title { font-weight: 600; }
+  .refs .ref-meta { color: #666; font-size: 0.95rem; margin-top: 0.15rem; }
+  .refs a { word-break: break-word; }
+  .back-top { display: inline-block; margin-top: 0.4rem; font-size: 0.9rem; text-decoration: none; }
+
   /* Responsive: Stack columns on mobile */
-  @media (max-width: 768px) { 
-    .tech-layout { grid-template-columns: 1fr; } 
+  @media (max-width: 768px) {
+    .tech-layout { grid-template-columns: 1fr; }
     .video-embed { height: 240px; }
   }
 </style>
@@ -29,22 +56,22 @@
 <body>
 
 <header>
-<div class="wrap nav">
-<div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
-<nav>
-<a href="./technology.html">Technology</a>
-<a href="./articles.html">History</a>
-<a href="./interviews.html">Geopolitics</a>
-<a href="./games.html">Why Explore ?</a>
-<a href="./about.html">Let's check what you've learned !</a>
-</nav>
-</div>
+  <div class="wrap nav">
+    <div class="brand"><div class="logo"></div><a href="../index.html">Ocean Exploration</a></div>
+    <nav>
+      <a href="./technology.html">Technology</a>
+      <a href="./articles.html">History</a>
+      <a href="./interviews.html">Geopolitics</a>
+      <a href="./games.html">Why Explore ?</a>
+      <a href="./about.html">Let's check what you've learned !</a>
+    </nav>
+  </div>
 </header>
 
-<main class="wrap">
+<main id="top" class="wrap">
   <h1>Technology</h1>
   <p class="sub">Drones & robots enabling exploration. Click a card to see details.</p>
-  
+
   <div class="grid cols-3">
     <article class="card">
       <span class="tag">AUV</span>
@@ -71,7 +98,7 @@
     </article>
   </div>
 
-  <!-- ✅ Added videos directly after the robot presentation -->
+  <!-- ✅ Videos -->
   <section class="video-section">
     <h2>Underwater Exploration Robots — Videos</h2>
     <p class="lead">Two short English documentaries showing how underwater robots explore environments too deep or dangerous for humans.</p>
@@ -119,14 +146,28 @@
     <div class="tech-layout">
       <div class="text-col">
         <h3>How it Works</h3>
-        <p>Unlike ROVs, AUVs have no cable connecting them to the ship. They must carry their own power and "think" for themselves.</p>
-        <h4>Navigation (The "Blind" Problem)</h4>
+        <p>Unlike ROVs, AUVs have no cable connecting them to the ship. They must carry their own power and “think” for themselves.</p>
+
+        <h4>Navigation (The “Blind” Problem)</h4>
         <ul class="tech-specs">
-          [cite_start]<li><strong>INS (Inertial Navigation):</strong> Uses gyroscopes to calculate movement from a start point[cite: 5].</li>
-          [cite_start]<li><strong>DVL (Doppler Velocity Log):</strong> Sonar that pings the seafloor to measure speed and correct drift[cite: 5].</li>
-          <li><strong>Acoustic Comms:</strong> Sends small data packets (status updates) via sound waves.</li>
+          <li>
+            <strong>INS (Inertial Navigation):</strong>
+            Uses gyroscopes/accelerometers to estimate position from a starting point
+            <a class="cite" href="#ref-1" title="See source 1">1</a>
+          </li>
+          <li>
+            <strong>DVL (Doppler Velocity Log):</strong>
+            Sonar that measures velocity relative to the seafloor (or water mass) to correct drift
+            <a class="cite" href="#ref-1" title="See source 1">1</a>
+          </li>
+          <li>
+            <strong>Acoustic Comms:</strong>
+            Sends small data packets (status updates) via sound waves
+            <a class="cite" href="#ref-2" title="See source 2">2</a>
+          </li>
         </ul>
       </div>
+
       <div class="img-col">
         <img src="./images/exail-header-auv-for-defense-applications-02_2500x1406.webp" alt="Exail AUV for Defense Applications" class="tech-img" />
         <span class="caption">Figure 1: An AUV operating autonomously. (Credit: Exail)</span>
@@ -143,7 +184,7 @@
 
     <div class="tech-layout">
       <div class="img-col">
-         <img src="./images/gamme-de-rov-seabotix-364.jpg" alt="SeaBotix ROV" class="tech-img" />
+        <img src="./images/gamme-de-rov-seabotix-364.jpg" alt="SeaBotix ROV" class="tech-img" />
         <span class="caption">Figure 2: A SeaBotix ROV, designed for inspection and observation tasks.</span>
       </div>
 
@@ -151,12 +192,15 @@
         <h3>The Tether Advantage</h3>
         <p>Because they are plugged into the ship, ROVs have two massive advantages over AUVs:</p>
         <ul class="tech-specs">
-          <li><strong>Unlimited Power:</strong> They don't rely on batteries, so they can stay down for days.</li>
-          <li><strong>Real-Time Control:</strong> The pilot sees live 4K video and can react instantly.</li>
+          <li><strong>High/Continuous Power:</strong> Not limited by onboard batteries, enabling longer and heavier-duty operations.</li>
+          <li><strong>Real-Time Control:</strong> The pilot sees live video and can react instantly.</li>
         </ul>
 
         <h4>Tooling & Instrumentation</h4>
-        [cite_start]<p>ROVs are equipped with <strong>manipulator arms</strong> (robotic hands) that can be gentle enough to pick up a sea sponge or strong enough to turn a valve[cite: 5]. They carry high-definition cameras and sensors to collect samples.</p>
+        <p>
+          Many scientific ROVs use <strong>manipulator arms</strong> to collect samples (rock, sediment, biological specimens) and place them into baskets or payload areas
+          <a class="cite" href="#ref-3" title="See source 3">3</a>
+        </p>
       </div>
     </div>
   </div>
@@ -171,17 +215,22 @@
     <div class="tech-layout">
       <div class="text-col">
         <h3>Engineering for Pressure</h3>
-        [cite_start]<p>At depth, the pressure can exceed 1,000 atmospheres[cite: 5]. To survive, submersibles rely on specialized core systems:</p>
-        
+        <p>
+          Pressure increases quickly with depth: roughly <strong>+1 atmosphere every 10 meters</strong>, reaching over <strong>1,000 atmospheres</strong> in the deepest trenches
+          <a class="cite" href="#ref-4" title="See source 4">4</a>
+        </p>
+
         <ul class="tech-specs">
-            <li><strong>Pressure Hull:</strong> A perfect sphere is the strongest shape. [cite_start]While early hulls were steel (like the <em>Trieste</em>), modern deep-divers use <strong>Titanium</strong>[cite: 5].</li>
-            <li><strong>Syntactic Foam:</strong> Standard air tanks would be crushed. [cite_start]Buoyancy is provided by a specialized foam made of billions of glass microspheres[cite: 5].</li>
-            [cite_start]<li><strong>Life Support:</strong> Systems that recycle air, add oxygen, and scrub CO₂ to keep the crew alive for hours[cite: 5].</li>
+          <li><strong>Pressure Hull:</strong> Strong shapes (often spheres) and high-strength materials protect the crew.</li>
+          <li><strong>Syntactic Foam:</strong> Buoyancy material that withstands crushing pressure at depth.</li>
+          <li><strong>Life Support:</strong> Systems that maintain breathable air and remove CO₂.</li>
         </ul>
 
         <h4>Famous Vehicles</h4>
-        <p><strong>DSV Alvin:</strong> Famous for discovering the Titanic and hydrothermal vents.<br>
-        <strong>Limiting Factor:</strong> The first vehicle capable of repeated dives to the deepest point in every ocean.</p>
+        <p>
+          <strong>DSV Alvin:</strong> Famous for hydrothermal vent exploration and countless science missions.<br>
+          <strong>Limiting Factor:</strong> A deep-rated submersible capable of repeated trench dives.
+        </p>
       </div>
 
       <div class="img-col">
@@ -192,17 +241,74 @@
   </div>
 </section>
 
-<section class="wrap" style="margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #ccc;">
+<section class="wrap refs" aria-label="Sources and references">
   <h3>Sources & Credits</h3>
-  <ul>
-    [cite_start]<li>Technical specifications and history adapted from: <em>History of Underwater Exploration Technology</em>[cite: 1, 5].</li>
-    <li>AUV Imaging: Exail Technologies.</li>
-    <li>ROV Imaging: SeaBotix / Teledyne Marine.</li>
-    <li>Submersible Imaging: Antipodes Submersible.</li>
-  </ul>
+  <ol>
+    <li id="ref-1">
+      <div class="ref-title">INS/DVL Fusion with Partial DVL Measurements (Sensors, 2017)</div>
+      <div class="ref-meta">
+        Peer-reviewed paper explaining INS/DVL principles and fusion approaches.
+        <a href="https://www.mdpi.com/1424-8220/17/2/415" target="_blank" rel="noopener">Open source</a>
+        · <a class="back-top" href="#auv-section">Back to AUV</a>
+      </div>
+    </li>
+
+    <li id="ref-2">
+      <div class="ref-title">Multi-AUV Localization & Acoustic Navigation (NOAA Repository PDF, 2022)</div>
+      <div class="ref-meta">
+        NOAA-hosted technical PDF covering scalable acoustic navigation/localization concepts.
+        <a href="https://repository.library.noaa.gov/view/noaa/41892/noaa_41892_DS1.pdf" target="_blank" rel="noopener">Open PDF</a>
+        · <a class="back-top" href="#auv-section">Back to AUV</a>
+      </div>
+    </li>
+
+    <li id="ref-3">
+      <div class="ref-title">ROV Jason — Sampling Systems & Manipulator Arms (WHOI / NDSF)</div>
+      <div class="ref-meta">
+        Official description of Jason’s sampling tools and manipulators.
+        <a href="https://www.whoi.edu/what-we-do/explore/underwater-vehicles/ndsf-jason/" target="_blank" rel="noopener">WHOI page</a>
+        · <a class="back-top" href="#rov-section">Back to ROV</a>
+      </div>
+    </li>
+
+    <li id="ref-4">
+      <div class="ref-title">Why Pressure Changes with Depth (+1 atm per 10 m) (WHOI Ocean Learning Hub)</div>
+      <div class="ref-meta">
+        Explanation of ocean pressure and typical values with depth.
+        <a href="https://www.whoi.edu/ocean-learning-hub/ocean-facts/why-is-pressure-different-in-the-ocean/" target="_blank" rel="noopener">WHOI explainer</a>
+        · <a class="back-top" href="#sub-section">Back to Submersibles</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="ref-title">Image Credits</div>
+      <div class="ref-meta">
+        AUV Imaging: Exail Technologies · ROV Imaging: SeaBotix / Teledyne Marine · Submersible Imaging: as credited in the figure caption.
+        · <a class="back-top" href="#top">Back to top</a>
+      </div>
+    </li>
+  </ol>
 </section>
 
 <footer class="footer"><div class="wrap">© <span id="year"></span> Ocean Exploration</div></footer>
+
 <script src="../script.js"></script>
+
+<!-- ✅ HARD FIX: removes any leftover [cite_start] / [cite: x] that still appear -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach(n => {
+      if (!n.nodeValue) return;
+      n.nodeValue = n.nodeValue
+        .replace(/\[cite_start\]/g, "")
+        .replace(/\[cite:\s*\d+(?:\s*,\s*\d+)*\]/g, "");
+    });
+  });
+</script>
+
 </body>
 </html>
